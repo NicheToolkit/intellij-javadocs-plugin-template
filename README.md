@@ -21,7 +21,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 >2、 use `intellij-javadocs.xml` replace `\projectPath\.idea\intellij-javadocs-x.x.x.xml` to set the project config
 
 
-## Javadoc Plugin Settings Templates
+## Javadoc Plugin Settings Keymap
 
 <!-- 接口 检测模板 -->
 ### Keymap Settings Notes
@@ -32,7 +32,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 >
 
 
-## Javadoc Plugin Settings Templates
+## Javadoc Plugin Examples
 
 ### Interface Example
 
@@ -486,6 +486,8 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 }
 
 ```
+
+## Javadoc Plugin Settings Templates
 
 ### Class Level
 
