@@ -3,7 +3,7 @@
     <class>
         <template regexp="^.*(public|protected|private)*.+interface\s+\w+.*">
         /**\n
-         * &lt;code&gt;${element.getName()}&lt;/code&gt;\n
+         * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The type ${name?lower_case} interface.&lt;/p&gt;\n
          * \n
          &lt;#-- the interface deprecated annotation --&gt; 
@@ -17,6 +17,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -88,6 +90,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -139,6 +143,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -227,6 +233,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -422,6 +430,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -532,6 +542,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -642,6 +654,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -698,6 +712,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;
@@ -810,6 +826,8 @@
                 &lt;#return name?keep_before(&quot;&lt;&quot;)&gt;
             &lt;#elseif name?contains(&quot;[&quot;)&gt;
                 &lt;#return name?keep_before(&quot;[&quot;)&gt;
+            &lt;#elseif name?contains(&quot;...&quot;)&gt;
+                &lt;#return name?keep_before(&quot;...&quot;)&gt;    
             &lt;#else&gt;
                 &lt;#return name&gt;
             &lt;/#if&gt;

@@ -43,7 +43,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 - Template
 ```java
 /**\n
- * <code>${element.getName()}</code>\n
+ * <code>${element.name}</code>\n
  * <p>The type ${name?lower_case} interface.</p>\n
  * \n
  <#-- the interface deprecated annotation --> 
