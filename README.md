@@ -69,6 +69,12 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
 
     @Deprecated
     default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
+
+    @NonNull
+    default int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
 }
 
 ```
@@ -90,8 +96,8 @@ import java.io.Serializable;
 /**
  * <code>TheInterfaceExample</code>
  * <p>The type the interface example interface.</p>
- * @param <I> {@link Object} <p>the parameter can be of any type.</p>
- * @param <E> {@link TheInterfaceExample} <p>the generic parameter is <code>TheInterfaceExample</code> type.</p>
+ * @param <I> {@link java.lang.Object} <p>the parameter can be of any type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.TheInterfaceExample} <p>the generic parameter is <code>TheInterfaceExample</code> type.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see java.io.Serializable
  * @see java.lang.Deprecated
@@ -104,7 +110,7 @@ import java.io.Serializable;
 public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> extends Serializable {
     /**
      * <code>INTERFACE_FIELD_EXAMPLE</code>
-     * {@link String} <p>the constant <code>INTERFACE_FIELD_EXAMPLE</code> field.</p>
+     * {@link java.lang.String} <p>the constant <code>INTERFACE_FIELD_EXAMPLE</code> field.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonIgnore
      */
@@ -114,7 +120,7 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
     /**
      * <code>getInterfaceField</code>
      * <p>the interface field getter method.</p>
-     * @return {@link String} <p>the interface field return object is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>the interface field return object is <code>String</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonValue
      * @see org.springframework.lang.NonNull
@@ -126,7 +132,7 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
     /**
      * <code>setInterfaceField</code>
      * <p>the interface field setter method.</p>
-     * @param interfaceField {@link String} <p>the interface field parameter is <code>String</code> type.</p>
+     * @param interfaceField {@link java.lang.String} <p>the interface field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
      * @see com.fasterxml.jackson.annotation.JsonCreator
@@ -137,11 +143,11 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
     /**
      * <code>theMethodExample</code>
      * <p>the method example method.</p>
-     * @param param1 {@link Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param param2 {@link String} <p>the param 2 parameter is <code>String</code> type.</p>
-     * @param param3 {@link String} <p>the param 3 parameter is <code>String</code> type.</p>
-     * @return {@link String} <p>the method example return object is <code>String</code> type.</p>
-     * @throws RestException {@link RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
+     * @param param2 {@link java.lang.String} <p>the param 2 parameter is <code>String</code> type.</p>
+     * @param param3 {@link java.lang.String} <p>the param 3 parameter is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>the method example return object is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
@@ -156,9 +162,9 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
     /**
      * <code>theVoidMethodExample</code>
      * <p>the void method example method.</p>
-     * @param param1 {@link Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param params {@link String} <p>the params parameter is <code>String</code> type.</p>
-     * @throws RestException {@link RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
+     * @param params {@link java.lang.String} <p>the params parameter is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
@@ -169,6 +175,24 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
      */
     @Deprecated
     default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
+
+    /**
+     * <code>theMethodExample</code>
+     * <p>the method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
+     * @param params int <p>the params parameter is <code>int</code> type.</p>
+     * @return int <p>the method example return object is <code>int</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see org.springframework.lang.NonNull
+     * @see io.github.nichetoolkit.rest.RestException
+     */
+    @NonNull
+    default int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
 }
 
 ```
@@ -355,6 +379,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     @Deprecated
     public void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
     }
+
+    @NonNull
+    public int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
 }
 
 ```
@@ -375,8 +405,8 @@ import java.io.Serializable;
 /**
  * <code>TheClassExample</code>
  * <p>The type the class example class.</p>
- * @param <I> {@link Object} <p>the parameter can be of any type.</p>
- * @param <E> {@link TheClassExample} <p>the generic parameter is <code>TheClassExample</code> type.</p>
+ * @param <I> {@link java.lang.Object} <p>the parameter can be of any type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.TheClassExample} <p>the generic parameter is <code>TheClassExample</code> type.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see java.io.Serializable
  * @see java.lang.Deprecated
@@ -389,18 +419,13 @@ import java.io.Serializable;
 public class TheClassExample<I, E extends TheClassExample<I, E>> implements Serializable {
     /**
      * <code>CLASS_FIELD_EXAMPLE</code>
-     * {@link String} <p>the constant <code>CLASS_FIELD_EXAMPLE</code> field.</p>
+     * {@link java.lang.String} <p>the constant <code>CLASS_FIELD_EXAMPLE</code> field.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonIgnore
      */
     @JsonIgnore
     public static final String CLASS_FIELD_EXAMPLE = "CLASS_FIELD_EXAMPLE";
 
-    /**
-     * <code>classField</code>
-     * {@link String} <p>the <code>classField</code> field.</p>
-     * @see java.lang.String
-     */
     private String classField;
 
     /**
@@ -413,7 +438,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     /**
      * <code>TheClassExample</code>
      * Instantiates a new the class example.
-     * @param classField {@link String} <p>the class field parameter is <code>String</code> type.</p>
+     * @param classField {@link java.lang.String} <p>the class field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      */
     public TheClassExample(String classField) {
@@ -423,7 +448,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     /**
      * <code>getClassField</code>
      * <p>the class field getter method.</p>
-     * @return {@link String} <p>the class field return object is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>the class field return object is <code>String</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonValue
      * @see org.springframework.lang.NonNull
@@ -437,7 +462,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     /**
      * <code>setClassField</code>
      * <p>the class field setter method.</p>
-     * @param classField {@link String} <p>the class field parameter is <code>String</code> type.</p>
+     * @param classField {@link java.lang.String} <p>the class field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
      * @see com.fasterxml.jackson.annotation.JsonCreator
@@ -450,11 +475,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     /**
      * <code>theMethodExample</code>
      * <p>the method example method.</p>
-     * @param param1 {@link Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param param2 {@link String} <p>the param 2 parameter is <code>String</code> type.</p>
-     * @param param3 {@link String} <p>the param 3 parameter is <code>String</code> type.</p>
-     * @return {@link String} <p>the method example return object is <code>String</code> type.</p>
-     * @throws RestException {@link RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
+     * @param param2 {@link java.lang.String} <p>the param 2 parameter is <code>String</code> type.</p>
+     * @param param3 {@link java.lang.String} <p>the param 3 parameter is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>the method example return object is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
@@ -469,9 +494,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     /**
      * <code>theVoidMethodExample</code>
      * <p>the void method example method.</p>
-     * @param param1 {@link Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param params {@link String} <p>the params parameter is <code>String</code> type.</p>
-     * @throws RestException {@link RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
+     * @param params {@link java.lang.String} <p>the params parameter is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
@@ -483,6 +508,24 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     @Deprecated
     public void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
     }
+
+    /**
+     * <code>theMethodExample</code>
+     * <p>the method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
+     * @param params int <p>the params parameter is <code>int</code> type.</p>
+     * @return int <p>the method example return object is <code>int</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see org.springframework.lang.NonNull
+     * @see io.github.nichetoolkit.rest.RestException
+     */
+    @NonNull
+    public int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
 }
 
 ```
@@ -501,7 +544,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 - Template
 ```java
 /**\n
- * <code>${element.getName()}</code>\n
+ * <code>${element.name}</code>\n
  * <p>The type ${name?lower_case} interface.</p>\n
  * \n
  <#-- the interface deprecated annotation --> 
@@ -535,7 +578,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)> 
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -573,6 +621,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * @since Jdk1.8 \n
  */
 ```
+
 <!-- 枚举 检测模板 -->
 #### Enum Template
 
@@ -679,7 +728,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)> 
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -779,7 +833,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)> 
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -869,7 +928,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name} 
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -905,7 +970,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName}  
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -961,7 +1032,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)>  
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -979,7 +1055,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name}  
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -1004,7 +1086,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#assign returnType = element.returnType> 
     <#assign presentableName = trim(returnType.presentableText)>
     <#assign canonicalName = trim(returnType.canonicalText)>
-    * @return {@link ${canonicalName}} <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+    * @return 
+    <#if canonicalName?contains(".")>
+        {@link ${canonicalName}}
+    <#else> 
+        ${canonicalName}
+    </#if>
+     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1029,7 +1117,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName}                 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1083,7 +1177,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)>  
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -1101,7 +1200,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name} 
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -1126,7 +1231,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#assign returnType = element.returnType> 
     <#assign presentableName = trim(returnType.presentableText)>
     <#assign canonicalName = trim(returnType.canonicalText)>
-    * @return {@link ${canonicalName}} <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+    * @return 
+    <#if canonicalName?contains(".")>
+        {@link ${canonicalName}}
+    <#else> 
+        ${canonicalName}
+    </#if>
+     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1151,7 +1262,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName} 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1218,7 +1335,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName} 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1273,7 +1396,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
                 <#assign rawType = extendType.rawType()>
                 <#assign presentableName = trim(rawType.presentableText)>
                 <#assign canonicalName = trim(rawType.canonicalText)>  
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -1291,7 +1419,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name} 
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -1316,7 +1450,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#assign returnType = element.returnType> 
     <#assign presentableName = trim(returnType.presentableText)>
     <#assign canonicalName = trim(returnType.canonicalText)>
-    * @return {@link ${canonicalName}} <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+    * @return 
+    <#if canonicalName?contains(".")>
+        {@link ${canonicalName}}
+    <#else> 
+        ${canonicalName}
+    </#if>
+     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1341,7 +1481,13 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName} 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1383,7 +1529,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#assign fieldType = element.type> 
 <#assign canonicalName = trim(fieldType.canonicalText)>
  * <code>${element.name}</code>\n
- * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+<#if canonicalName?contains(".")>
+    * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+<#else> 
+    * <p>the constant <code>${element.name}</code> field.</p>\n
+</#if>
  * \n
  <#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
@@ -1442,10 +1592,18 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#assign fieldType = element.type> 
 <#assign canonicalName = trim(fieldType.canonicalText)>
  * <code>${element.name}</code>\n
- <#if element.parent.isInterface()>
-    * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+<#if element.parent.isInterface()>
+    <#if canonicalName?contains(".")>
+        * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+    <#else> 
+        * <p>the constant <code>${element.name}</code> field.</p>\n
+    </#if>
  <#else>
-    * {@link ${canonicalName}} <p>the <code>${element.name}</code> field.</p>\n
+    <#if canonicalName?contains(".")>
+        * {@link ${canonicalName}} <p>the <code>${element.name}</code> field.</p>\n
+    <#else> 
+        * <p>the <code>${element.name}</code> field.</p>\n
+    </#if>
  </#if>
  * \n
  <#-- the field deprecated annotation --> 
@@ -1506,7 +1664,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#assign canonicalName = trim(fieldType.canonicalText)>
  * <code>${element.name}</code>\n
  <#if element.parent.isInterface()>
-    * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+    <#if canonicalName?contains(".")>
+        * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+    <#else> 
+        * <p>the constant <code>${element.name}</code> field.</p>\n
+    </#if> 
  <#elseif element.parent.isEnum()>
     * <p>the ${name} ${typeName} field.</p>\n
  <#else>

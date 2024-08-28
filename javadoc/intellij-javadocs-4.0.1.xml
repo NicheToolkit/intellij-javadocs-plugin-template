@@ -14,6 +14,7 @@
         <VISIBILITY>PUBLIC</VISIBILITY>
         <VISIBILITY>PROTECTED</VISIBILITY>
         <VISIBILITY>DEFAULT</VISIBILITY>
+        <VISIBILITY>PRIVATE</VISIBILITY>
       </VISIBILITIES>
     </GENERAL>
     <TEMPLATES>
@@ -55,7 +56,12 @@
                 &lt;#assign rawType = extendType.rawType()&gt; 
                 &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
                 &lt;#assign canonicalName = trim(rawType.canonicalText)&gt; 
-                {@link ${canonicalName}} &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+                    {@link ${canonicalName}}
+                &lt;#else&gt; 
+                    ${canonicalName}
+                &lt;/#if&gt;
+                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !classSees?contains(canonicalName)&gt; 
                     &lt;#assign classSees = classSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
@@ -184,7 +190,12 @@
                 &lt;#assign rawType = extendType.rawType()&gt; 
                 &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
                 &lt;#assign canonicalName = trim(rawType.canonicalText)&gt; 
-                {@link ${canonicalName}} &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+                    {@link ${canonicalName}}
+                &lt;#else&gt; 
+                    ${canonicalName}
+                &lt;/#if&gt;
+                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !classSees?contains(canonicalName)&gt; 
                     &lt;#assign classSees = classSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
@@ -276,7 +287,12 @@
                 &lt;#assign rawType = extendType.rawType()&gt; 
                 &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
                 &lt;#assign canonicalName = trim(rawType.canonicalText)&gt; 
-                {@link ${canonicalName}} &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+                    {@link ${canonicalName}}
+                &lt;#else&gt; 
+                    ${canonicalName}
+                &lt;/#if&gt;
+                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !classSees?contains(canonicalName)&gt; 
                     &lt;#assign classSees = classSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
@@ -361,7 +377,13 @@
         &lt;#assign parameterType = parameter.type&gt;
         &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
         &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
-        * @param ${parameter.name} {@link ${canonicalName}} &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @param ${parameter.name} 
+        &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+            {@link ${canonicalName}}
+        &lt;#else&gt; 
+            ${canonicalName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -397,7 +419,13 @@
     &lt;#list element.throwsList.referenceElements as exception&gt;
         &lt;#assign referenceName = trim(exception.referenceName)&gt;
         &lt;#assign qualifiedName = trim(exception.qualifiedName)&gt;         
-        * @throws ${referenceName} {@link ${qualifiedName}} &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @throws ${referenceName}  
+        &lt;#if qualifiedName?contains(&quot;.&quot;)&gt;
+            {@link ${qualifiedName}}
+        &lt;#else&gt; 
+            ${qualifiedName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -445,7 +473,12 @@
                 &lt;#assign rawType = extendType.rawType()&gt; 
                 &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
                 &lt;#assign canonicalName = trim(rawType.canonicalText)&gt;  
-                {@link ${canonicalName}} &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+                    {@link ${canonicalName}}
+                &lt;#else&gt; 
+                    ${canonicalName}
+                &lt;/#if&gt;
+                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !methodSees?contains(canonicalName)&gt; 
                     &lt;#assign methodSees = methodSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
@@ -463,7 +496,13 @@
         &lt;#assign parameterType = parameter.type&gt;
         &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
         &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
-        * @param ${parameter.name} {@link ${canonicalName}} &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @param ${parameter.name}  
+        &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+            {@link ${canonicalName}}
+        &lt;#else&gt; 
+            ${canonicalName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -488,7 +527,13 @@
     &lt;#assign returnType = element.returnType&gt; 
     &lt;#assign presentableName = trim(returnType.presentableText)&gt;
     &lt;#assign canonicalName = trim(returnType.canonicalText)&gt;
-    * @return {@link ${canonicalName}} &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+    * @return 
+    &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+        {@link ${canonicalName}}
+    &lt;#else&gt; 
+        ${canonicalName}
+    &lt;/#if&gt;
+     &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
     &lt;#if !methodSees?contains(canonicalName)&gt; 
         &lt;#assign methodSees = methodSees + canonicalName&gt;  
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -513,7 +558,13 @@
     &lt;#list element.throwsList.referenceElements as exception&gt;
         &lt;#assign referenceName = trim(exception.referenceName)&gt;
         &lt;#assign qualifiedName = trim(exception.qualifiedName)&gt;         
-        * @throws ${referenceName} {@link ${qualifiedName}} &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @throws ${referenceName}                 
+        &lt;#if qualifiedName?contains(&quot;.&quot;)&gt;
+            {@link ${qualifiedName}}
+        &lt;#else&gt; 
+            ${qualifiedName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -559,7 +610,12 @@
                 &lt;#assign rawType = extendType.rawType()&gt; 
                 &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
                 &lt;#assign canonicalName = trim(rawType.canonicalText)&gt;  
-                {@link ${canonicalName}} &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+                    {@link ${canonicalName}}
+                &lt;#else&gt; 
+                    ${canonicalName}
+                &lt;/#if&gt;
+                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !methodSees?contains(canonicalName)&gt; 
                     &lt;#assign methodSees = methodSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
@@ -577,7 +633,13 @@
         &lt;#assign parameterType = parameter.type&gt;
         &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
         &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
-        * @param ${parameter.name} {@link ${canonicalName}} &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @param ${parameter.name} 
+        &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+            {@link ${canonicalName}}
+        &lt;#else&gt; 
+            ${canonicalName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -602,7 +664,13 @@
     &lt;#assign returnType = element.returnType&gt; 
     &lt;#assign presentableName = trim(returnType.presentableText)&gt;
     &lt;#assign canonicalName = trim(returnType.canonicalText)&gt;
-    * @return {@link ${canonicalName}} &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+    * @return 
+    &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+        {@link ${canonicalName}}
+    &lt;#else&gt; 
+        ${canonicalName}
+    &lt;/#if&gt;
+     &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
     &lt;#if !methodSees?contains(canonicalName)&gt; 
         &lt;#assign methodSees = methodSees + canonicalName&gt;  
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -627,7 +695,13 @@
     &lt;#list element.throwsList.referenceElements as exception&gt;
         &lt;#assign referenceName = trim(exception.referenceName)&gt;
         &lt;#assign qualifiedName = trim(exception.qualifiedName)&gt;         
-        * @throws ${referenceName} {@link ${qualifiedName}} &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @throws ${referenceName} 
+        &lt;#if qualifiedName?contains(&quot;.&quot;)&gt;
+            {@link ${qualifiedName}}
+        &lt;#else&gt; 
+            ${qualifiedName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -686,7 +760,13 @@
     &lt;#list element.throwsList.referenceElements as exception&gt;
         &lt;#assign referenceName = trim(exception.referenceName)&gt;
         &lt;#assign qualifiedName = trim(exception.qualifiedName)&gt;         
-        * @throws ${referenceName} {@link ${qualifiedName}} &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @throws ${referenceName} 
+        &lt;#if qualifiedName?contains(&quot;.&quot;)&gt;
+            {@link ${qualifiedName}}
+        &lt;#else&gt; 
+            ${qualifiedName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -732,7 +812,12 @@
                 &lt;#assign rawType = extendType.rawType()&gt;
                 &lt;#assign presentableName = trim(rawType.presentableText)&gt;
                 &lt;#assign canonicalName = trim(rawType.canonicalText)&gt;  
-                {@link ${canonicalName}} &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+                    {@link ${canonicalName}}
+                &lt;#else&gt; 
+                    ${canonicalName}
+                &lt;/#if&gt;
+                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !methodSees?contains(canonicalName)&gt; 
                     &lt;#assign methodSees = methodSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
@@ -750,7 +835,13 @@
         &lt;#assign parameterType = parameter.type&gt;
         &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
         &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
-        * @param ${parameter.name} {@link ${canonicalName}} &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @param ${parameter.name} 
+        &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+            {@link ${canonicalName}}
+        &lt;#else&gt; 
+            ${canonicalName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -775,7 +866,13 @@
     &lt;#assign returnType = element.returnType&gt; 
     &lt;#assign presentableName = trim(returnType.presentableText)&gt;
     &lt;#assign canonicalName = trim(returnType.canonicalText)&gt;
-    * @return {@link ${canonicalName}} &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+    * @return 
+    &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+        {@link ${canonicalName}}
+    &lt;#else&gt; 
+        ${canonicalName}
+    &lt;/#if&gt;
+     &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
     &lt;#if !methodSees?contains(canonicalName)&gt; 
         &lt;#assign methodSees = methodSees + canonicalName&gt;  
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -800,7 +897,13 @@
     &lt;#list element.throwsList.referenceElements as exception&gt;
         &lt;#assign referenceName = trim(exception.referenceName)&gt;
         &lt;#assign qualifiedName = trim(exception.qualifiedName)&gt;         
-        * @throws ${referenceName} {@link ${qualifiedName}} &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+        * @throws ${referenceName} 
+        &lt;#if qualifiedName?contains(&quot;.&quot;)&gt;
+            {@link ${qualifiedName}}
+        &lt;#else&gt; 
+            ${qualifiedName}
+        &lt;/#if&gt;
+         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -834,7 +937,11 @@
 &lt;#assign fieldType = element.type&gt; 
 &lt;#assign canonicalName = trim(fieldType.canonicalText)&gt;
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
- * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+&lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+    * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+&lt;#else&gt; 
+    * &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+&lt;/#if&gt;
  * \n
  &lt;#-- the field deprecated annotation --&gt; 
 &lt;#if element.isDeprecated()&gt;
@@ -884,10 +991,18 @@
 &lt;#assign fieldType = element.type&gt; 
 &lt;#assign canonicalName = trim(fieldType.canonicalText)&gt;
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
- &lt;#if element.parent.isInterface()&gt;
-    * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+&lt;#if element.parent.isInterface()&gt;
+    &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+        * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;#else&gt; 
+        * &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;/#if&gt;
  &lt;#else&gt;
-    * {@link ${canonicalName}} &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+        * {@link ${canonicalName}} &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;#else&gt; 
+        * &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;/#if&gt;
  &lt;/#if&gt;
  * \n
  &lt;#-- the field deprecated annotation --&gt; 
@@ -939,7 +1054,11 @@
 &lt;#assign canonicalName = trim(fieldType.canonicalText)&gt;
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
  &lt;#if element.parent.isInterface()&gt;
-    * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
+        * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;#else&gt; 
+        * &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    &lt;/#if&gt; 
  &lt;#elseif element.parent.isEnum()&gt;
     * &lt;p&gt;the ${name} ${typeName} field.&lt;/p&gt;\n
  &lt;#else&gt;

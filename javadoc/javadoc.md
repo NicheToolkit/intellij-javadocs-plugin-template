@@ -21,7 +21,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 >2、 use `intellij-javadocs.xml` replace `\projectPath\.idea\intellij-javadocs-x.x.x.xml` to set the project config
 
 
-## Javadoc Plugin Settings Templates
+## Javadoc Plugin Settings Keymap
 
 <!-- 接口 检测模板 -->
 ### Keymap Settings Notes
@@ -30,6 +30,8 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 > 
 > set keymap use `ctrl`+`alt`+`\` replace `shift`+`ctrl`+`alt`+`Z` to remove javadocs for all elements
 >
+
+## Javadoc Plugin Settings Templates
 
 ### Class Level
 
@@ -77,7 +79,12 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)> 
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -222,7 +229,12 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)> 
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -322,7 +334,12 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)> 
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -412,7 +429,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name} 
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -448,7 +471,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName}  
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -504,7 +533,12 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)>  
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -522,7 +556,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name}  
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -547,7 +587,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#assign returnType = element.returnType> 
     <#assign presentableName = trim(returnType.presentableText)>
     <#assign canonicalName = trim(returnType.canonicalText)>
-    * @return {@link ${canonicalName}} <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+    * @return 
+    <#if canonicalName?contains(".")>
+        {@link ${canonicalName}}
+    <#else> 
+        ${canonicalName}
+    </#if>
+     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -572,7 +618,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName}                 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -626,7 +678,12 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
                 <#assign rawType = extendType.rawType()> 
                 <#assign presentableName = trim(rawType.presentableText)> 
                 <#assign canonicalName = trim(rawType.canonicalText)>  
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -644,7 +701,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name} 
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -669,7 +732,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#assign returnType = element.returnType> 
     <#assign presentableName = trim(returnType.presentableText)>
     <#assign canonicalName = trim(returnType.canonicalText)>
-    * @return {@link ${canonicalName}} <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+    * @return 
+    <#if canonicalName?contains(".")>
+        {@link ${canonicalName}}
+    <#else> 
+        ${canonicalName}
+    </#if>
+     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -694,7 +763,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName} 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -761,7 +836,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName} 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -816,7 +897,12 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
                 <#assign rawType = extendType.rawType()>
                 <#assign presentableName = trim(rawType.presentableText)>
                 <#assign canonicalName = trim(rawType.canonicalText)>  
-                {@link ${canonicalName}} <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                <#if canonicalName?contains(".")>
+                    {@link ${canonicalName}}
+                <#else> 
+                    ${canonicalName}
+                </#if>
+                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
@@ -834,7 +920,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
         <#assign parameterType = parameter.type>
         <#assign presentableName = trim(parameterType.presentableText)>
         <#assign canonicalName = trim(parameterType.canonicalText)>         
-        * @param ${parameter.name} {@link ${canonicalName}} <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+        * @param ${parameter.name} 
+        <#if canonicalName?contains(".")>
+            {@link ${canonicalName}}
+        <#else> 
+            ${canonicalName}
+        </#if>
+         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -859,7 +951,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#assign returnType = element.returnType> 
     <#assign presentableName = trim(returnType.presentableText)>
     <#assign canonicalName = trim(returnType.canonicalText)>
-    * @return {@link ${canonicalName}} <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+    * @return 
+    <#if canonicalName?contains(".")>
+        {@link ${canonicalName}}
+    <#else> 
+        ${canonicalName}
+    </#if>
+     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -884,7 +982,13 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
     <#list element.throwsList.referenceElements as exception>
         <#assign referenceName = trim(exception.referenceName)>
         <#assign qualifiedName = trim(exception.qualifiedName)>         
-        * @throws ${referenceName} {@link ${qualifiedName}} <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+        * @throws ${referenceName} 
+        <#if qualifiedName?contains(".")>
+            {@link ${qualifiedName}}
+        <#else> 
+            ${qualifiedName}
+        </#if>
+         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -926,7 +1030,11 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 <#assign fieldType = element.type> 
 <#assign canonicalName = trim(fieldType.canonicalText)>
  * <code>${element.name}</code>\n
- * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+<#if canonicalName?contains(".")>
+    * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+<#else> 
+    * <p>the constant <code>${element.name}</code> field.</p>\n
+</#if>
  * \n
  <#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
@@ -985,10 +1093,18 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 <#assign fieldType = element.type> 
 <#assign canonicalName = trim(fieldType.canonicalText)>
  * <code>${element.name}</code>\n
- <#if element.parent.isInterface()>
-    * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+<#if element.parent.isInterface()>
+    <#if canonicalName?contains(".")>
+        * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+    <#else> 
+        * <p>the constant <code>${element.name}</code> field.</p>\n
+    </#if>
  <#else>
-    * {@link ${canonicalName}} <p>the <code>${element.name}</code> field.</p>\n
+    <#if canonicalName?contains(".")>
+        * {@link ${canonicalName}} <p>the <code>${element.name}</code> field.</p>\n
+    <#else> 
+        * <p>the <code>${element.name}</code> field.</p>\n
+    </#if>
  </#if>
  * \n
  <#-- the field deprecated annotation --> 
@@ -1049,7 +1165,11 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 <#assign canonicalName = trim(fieldType.canonicalText)>
  * <code>${element.name}</code>\n
  <#if element.parent.isInterface()>
-    * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+    <#if canonicalName?contains(".")>
+        * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+    <#else> 
+        * <p>the constant <code>${element.name}</code> field.</p>\n
+    </#if> 
  <#elseif element.parent.isEnum()>
     * <p>the ${name} ${typeName} field.</p>\n
  <#else>
