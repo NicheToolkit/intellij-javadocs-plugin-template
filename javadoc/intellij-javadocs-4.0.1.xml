@@ -740,7 +740,7 @@
  * \n
 &lt;#-- the method parameters --&gt;
 &lt;#if element.parameterList.parameters?has_content&gt;
-    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} &lt;p&gt;the input arguments.&lt;p&gt;\n
+    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} &lt;p&gt;the input arguments.&lt;/p&gt;\n
     * @see java.lang.String  \n 
 &lt;/#if&gt;   
  * \n

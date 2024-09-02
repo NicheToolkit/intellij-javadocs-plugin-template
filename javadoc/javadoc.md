@@ -21,7 +21,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 >2、 use `intellij-javadocs.xml` replace `\projectPath\.idea\intellij-javadocs-x.x.x.xml` to set the project config
 
 
-## Javadoc Plugin Settings Keymap
+## Javadoc Plugin Settings Templates
 
 <!-- 接口 检测模板 -->
 ### Keymap Settings Notes
@@ -30,8 +30,6 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 > 
 > set keymap use `ctrl`+`alt`+`\` replace `shift`+`ctrl`+`alt`+`Z` to remove javadocs for all elements
 >
-
-## Javadoc Plugin Settings Templates
 
 ### Class Level
 
@@ -816,7 +814,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
  * \n
 <#-- the method parameters -->
 <#if element.parameterList.parameters?has_content>
-    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} <p>the input arguments.<p>\n
+    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} <p>the input arguments.</p>\n
     * @see java.lang.String  \n 
 </#if>   
  * \n
