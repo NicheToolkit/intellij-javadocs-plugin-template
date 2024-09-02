@@ -1315,7 +1315,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * \n
 <#-- the method parameters -->
 <#if element.parameterList.parameters?has_content>
-    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} <p>the input arguments.<p>\n
+    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} <p>the input arguments.</p>\n
     * @see java.lang.String  \n 
 </#if>   
  * \n
