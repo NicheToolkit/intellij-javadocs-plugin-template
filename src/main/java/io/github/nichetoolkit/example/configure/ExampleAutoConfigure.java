@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
 public class ExampleAutoConfigure {
     /**
      * <code>ExampleAutoConfigure</code>
-     * Instantiates a new example auto configure.
+     * <p>Instantiates a new example auto configure.</p>
      */
     public ExampleAutoConfigure() {
         log.debug("================= example-auto-configure initiated ！ ===================");

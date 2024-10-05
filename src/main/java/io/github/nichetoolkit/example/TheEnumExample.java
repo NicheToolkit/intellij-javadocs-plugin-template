@@ -15,28 +15,26 @@ import java.util.Optional;
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>the TheEnumExample enumeration has be deprecated.</p>
+ * @deprecated <p>The the enum example enumeration has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
 public enum TheEnumExample implements RestKey<String> {
     /**
      * <code>CASE1</code>
-     * <p>the Case 1 the enum example field.</p>
-     * @see io.github.nichetoolkit.example.TheEnumExample
+     * <p>The case 1 the enum example field.</p>
      */
     CASE1("case1"),
     /**
      * <code>CASE2</code>
-     * <p>the Case 2 the enum example field.</p>
-     * @see io.github.nichetoolkit.example.TheEnumExample
+     * <p>The case 2 the enum example field.</p>
      */
     CASE2("case2"),
     ;
 
     /**
      * <code>ENUM_FIELD_EXAMPLE</code>
-     * {@link String} <p>the constant <code>ENUM_FIELD_EXAMPLE</code> field.</p>
+     * {@link java.lang.String} <p>The constant <code>ENUM_FIELD_EXAMPLE</code> field.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonIgnore
      */
@@ -45,15 +43,15 @@ public enum TheEnumExample implements RestKey<String> {
 
     /**
      * <code>key</code>
-     * {@link String} <p>the <code>key</code> field.</p>
+     * {@link java.lang.String} <p>The <code>key</code> field.</p>
      * @see java.lang.String
      */
     private final String key;
 
     /**
      * <code>TheEnumExample</code>
-     * Instantiates a new the enum example.
-     * @param key {@link String} <p>the key parameter is <code>String</code> type.</p>
+     * <p>Instantiates a new the enum example.</p>
+     * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
      * @see java.lang.String
      */
     TheEnumExample(String key) {
@@ -68,9 +66,9 @@ public enum TheEnumExample implements RestKey<String> {
 
     /**
      * <code>parseKey</code>
-     * <p>the key method.</p>
-     * @param key {@link String} <p>the key parameter is <code>String</code> type.</p>
-     * @return {@link TheEnumExample} <p>the key return object is <code>TheEnumExample</code> type.</p>
+     * <p>The key method.</p>
+     * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
+     * @return {@link io.github.nichetoolkit.example.TheEnumExample} <p>The key return object is <code>TheEnumExample</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonCreator
      */

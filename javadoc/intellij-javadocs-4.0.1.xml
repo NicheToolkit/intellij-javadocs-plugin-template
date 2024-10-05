@@ -27,7 +27,7 @@
  * \n
  &lt;#-- the interface deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} interface has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} interface has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt; 
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -54,21 +54,21 @@
         &lt;#if parameter.extendsListTypes?has_content&gt;
             &lt;#list parameter.extendsListTypes as extendType&gt;
                 &lt;#assign rawType = extendType.rawType()&gt; 
-                &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
-                &lt;#assign canonicalName = trim(rawType.canonicalText)&gt; 
+                &lt;#assign presentableName = trim(rawType.getPresentableText(false))&gt; 
+                &lt;#assign canonicalName = trim(rawType.getCanonicalText(false))&gt; 
                 &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                     {@link ${canonicalName}}
                 &lt;#else&gt; 
                     ${canonicalName}
                 &lt;/#if&gt;
-                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                 &lt;p&gt;The generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !classSees?contains(canonicalName)&gt; 
                     &lt;#assign classSees = classSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;#else&gt;
-            {@link java.lang.Object} &lt;p&gt;the parameter can be of any type.&lt;/p&gt; \n
+            {@link java.lang.Object} &lt;p&gt;The parameter can be of any type.&lt;/p&gt; \n
         &lt;/#if&gt;
     &lt;/#list&gt;
 &lt;/#if&gt;
@@ -76,7 +76,7 @@
 &lt;#-- the interface extends class types--&gt;
 &lt;#if element.extendsListTypes?has_content&gt;
     &lt;#list element.extendsListTypes as extendType&gt;
-        &lt;#assign canonicalName = trim(extendType.rawType().canonicalText)&gt;        
+        &lt;#assign canonicalName = trim(extendType.rawType().getCanonicalText(false))&gt;        
         &lt;#if !classSees?contains(canonicalName)&gt; 
             &lt;#assign classSees = classSees + canonicalName&gt;                  
             * @see ${canonicalName} \n
@@ -107,7 +107,7 @@
  * \n
  &lt;#-- the enumeration deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} enumeration has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} enumeration has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -130,7 +130,7 @@
 &lt;#-- the enumeration implements interface types--&gt;
 &lt;#if element.implementsListTypes?has_content&gt;
     &lt;#list element.implementsListTypes as implementType&gt;
-        &lt;#assign canonicalName = trim(implementType.rawType().canonicalText)&gt;
+        &lt;#assign canonicalName = trim(implementType.rawType().getCanonicalText(false))&gt;
         &lt;#if !classSees?contains(canonicalName)&gt; 
             &lt;#assign classSees = classSees + canonicalName&gt;                  
             * @see ${canonicalName} \n
@@ -161,7 +161,7 @@
  * \n
  &lt;#-- the class deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} class has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} class has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt; 
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -188,21 +188,21 @@
         &lt;#if parameter.extendsListTypes?has_content&gt;
             &lt;#list parameter.extendsListTypes as extendType&gt;
                 &lt;#assign rawType = extendType.rawType()&gt; 
-                &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
-                &lt;#assign canonicalName = trim(rawType.canonicalText)&gt; 
+                &lt;#assign presentableName = trim(rawType.getPresentableText(false))&gt; 
+                &lt;#assign canonicalName = trim(rawType.getCanonicalText(false))&gt; 
                 &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                     {@link ${canonicalName}}
                 &lt;#else&gt; 
                     ${canonicalName}
                 &lt;/#if&gt;
-                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                 &lt;p&gt;The generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !classSees?contains(canonicalName)&gt; 
                     &lt;#assign classSees = classSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;#else&gt;
-            {@link java.lang.Object} &lt;p&gt;the parameter can be of any type.&lt;/p&gt; \n
+            {@link java.lang.Object} &lt;p&gt;The parameter can be of any type.&lt;/p&gt; \n
         &lt;/#if&gt;
     &lt;/#list&gt;
 &lt;/#if&gt;
@@ -210,7 +210,7 @@
 &lt;#-- the class extends class types--&gt;
 &lt;#if element.extendsListTypes?has_content&gt;
     &lt;#list element.extendsListTypes as extendType&gt;
-        &lt;#assign canonicalName = trim(extendType.rawType().canonicalText)&gt;        
+        &lt;#assign canonicalName = trim(extendType.rawType().getCanonicalText(false))&gt;        
         &lt;#if !classSees?contains(canonicalName)&gt; 
             &lt;#assign classSees = classSees + canonicalName&gt;                  
             * @see ${canonicalName} \n
@@ -221,7 +221,7 @@
 &lt;#-- the class implements interface types--&gt;
 &lt;#if element.implementsListTypes?has_content&gt;
     &lt;#list element.implementsListTypes as implementType&gt;
-        &lt;#assign canonicalName = trim(implementType.rawType().canonicalText)&gt;
+        &lt;#assign canonicalName = trim(implementType.rawType().getCanonicalText(false))&gt;
         &lt;#if !classSees?contains(canonicalName)&gt; 
             &lt;#assign classSees = classSees + canonicalName&gt;                  
             * @see ${canonicalName} \n
@@ -258,7 +258,7 @@
  * \n
  &lt;#-- the class deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} class has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} class has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt; 
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -285,21 +285,21 @@
         &lt;#if parameter.extendsListTypes?has_content&gt;
             &lt;#list parameter.extendsListTypes as extendType&gt;
                 &lt;#assign rawType = extendType.rawType()&gt; 
-                &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
-                &lt;#assign canonicalName = trim(rawType.canonicalText)&gt; 
+                &lt;#assign presentableName = trim(rawType.getPresentableText(false))&gt; 
+                &lt;#assign canonicalName = trim(rawType.getCanonicalText(false))&gt; 
                 &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                     {@link ${canonicalName}}
                 &lt;#else&gt; 
                     ${canonicalName}
                 &lt;/#if&gt;
-                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                 &lt;p&gt;The generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !classSees?contains(canonicalName)&gt; 
                     &lt;#assign classSees = classSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;#else&gt;
-            {@link java.lang.Object} &lt;p&gt;the parameter can be of any type.&lt;/p&gt; \n
+            {@link java.lang.Object} &lt;p&gt;The parameter can be of any type.&lt;/p&gt; \n
         &lt;/#if&gt;
     &lt;/#list&gt;
 &lt;/#if&gt;
@@ -307,7 +307,7 @@
 &lt;#-- the class extends class types--&gt;
 &lt;#if element.extendsListTypes?has_content&gt;
     &lt;#list element.extendsListTypes as extendType&gt;
-        &lt;#assign canonicalName = trim(extendType.rawType().canonicalText)&gt;        
+        &lt;#assign canonicalName = trim(extendType.rawType().getCanonicalText(false))&gt;        
         &lt;#if !classSees?contains(canonicalName)&gt; 
             &lt;#assign classSees = classSees + canonicalName&gt;                  
             * @see ${canonicalName} \n
@@ -318,7 +318,7 @@
 &lt;#-- the class implements interface types--&gt;
 &lt;#if element.implementsListTypes?has_content&gt;
     &lt;#list element.implementsListTypes as implementType&gt;
-        &lt;#assign canonicalName = trim(implementType.rawType().canonicalText)&gt;
+        &lt;#assign canonicalName = trim(implementType.rawType().getCanonicalText(false))&gt;
         &lt;#if !classSees?contains(canonicalName)&gt; 
             &lt;#assign classSees = classSees + canonicalName&gt;                  
             * @see ${canonicalName} \n
@@ -347,11 +347,11 @@
           <KEY>.+</KEY>
           <VALUE>/**\n
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
- * Instantiates a new ${name?lower_case}.\n
+ * &lt;p&gt;Instantiates a new ${name?lower_case}.&lt;/p&gt;\n
  * \n
  &lt;#-- the method deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} method has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -375,15 +375,15 @@
 &lt;#if element.parameterList.parameters?has_content&gt;
     &lt;#list element.parameterList.parameters as parameter&gt;
         &lt;#assign parameterType = parameter.type&gt;
-        &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
-        &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
+        &lt;#assign presentableName = trim(parameterType.getPresentableText(false))&gt;
+        &lt;#assign canonicalName = trim(parameterType.getCanonicalText(false))&gt;         
         * @param ${parameter.name} 
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
             {@link ${canonicalName}}
         &lt;#else&gt; 
             ${canonicalName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${paramNames[parameter.name]?lower_case} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -425,7 +425,7 @@
         &lt;#else&gt; 
             ${qualifiedName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${exceptionNames[referenceName]?lower_case} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -440,11 +440,11 @@
           <KEY>^.*(public|protected|private)*\s*.*(\w(\s*&lt;.+&gt;)*)+\s+get\w+\s*\(.*\).+</KEY>
           <VALUE>/**\n
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
- * &lt;p&gt;the ${partName?lower_case} getter method.&lt;/p&gt;\n
+ * &lt;p&gt;The ${partName?lower_case} getter method.&lt;/p&gt;\n
  * \n
  &lt;#-- the method deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} method has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -471,21 +471,21 @@
         &lt;#if parameter.extendsListTypes?has_content&gt;
             &lt;#list parameter.extendsListTypes as extendType&gt;
                 &lt;#assign rawType = extendType.rawType()&gt; 
-                &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
-                &lt;#assign canonicalName = trim(rawType.canonicalText)&gt;  
+                &lt;#assign presentableName = trim(rawType.getPresentableText(false))&gt; 
+                &lt;#assign canonicalName = trim(rawType.getCanonicalText(false))&gt;  
                 &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                     {@link ${canonicalName}}
                 &lt;#else&gt; 
                     ${canonicalName}
                 &lt;/#if&gt;
-                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                 &lt;p&gt;The generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !methodSees?contains(canonicalName)&gt; 
                     &lt;#assign methodSees = methodSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;#else&gt;
-            {@link java.lang.Object} &lt;p&gt;the parameter can be of any type.&lt;/p&gt; \n
+            {@link java.lang.Object} &lt;p&gt;The parameter can be of any type.&lt;/p&gt; \n
         &lt;/#if&gt;
     &lt;/#list&gt;
 &lt;/#if&gt;
@@ -494,15 +494,15 @@
 &lt;#if element.parameterList.parameters?has_content&gt;
     &lt;#list element.parameterList.parameters as parameter&gt;
         &lt;#assign parameterType = parameter.type&gt;
-        &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
-        &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
+        &lt;#assign presentableName = trim(parameterType.getPresentableText(false))&gt;
+        &lt;#assign canonicalName = trim(parameterType.getCanonicalText(false))&gt;         
         * @param ${parameter.name}  
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
             {@link ${canonicalName}}
         &lt;#else&gt; 
             ${canonicalName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${paramNames[parameter.name]?lower_case} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -525,15 +525,15 @@
 &lt;#-- the method return type --&gt;
 &lt;#if isNotVoid&gt;
     &lt;#assign returnType = element.returnType&gt; 
-    &lt;#assign presentableName = trim(returnType.presentableText)&gt;
-    &lt;#assign canonicalName = trim(returnType.canonicalText)&gt;
+    &lt;#assign presentableName = trim(returnType.getPresentableText(false))&gt;
+    &lt;#assign canonicalName = trim(returnType.getCanonicalText(false))&gt;
     * @return 
     &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
         {@link ${canonicalName}}
     &lt;#else&gt; 
         ${canonicalName}
     &lt;/#if&gt;
-     &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+     &lt;p&gt;The ${partName?lower_case} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
     &lt;#if !methodSees?contains(canonicalName)&gt; 
         &lt;#assign methodSees = methodSees + canonicalName&gt;  
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -564,7 +564,7 @@
         &lt;#else&gt; 
             ${qualifiedName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${exceptionNames[referenceName]?lower_case} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -577,11 +577,11 @@
           <KEY>^.*(public|protected|private)*\s*.*(void|\w(\s*&lt;.+&gt;)*)+\s+set\w+\s*\(.*\).+</KEY>
           <VALUE>/**\n
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
- * &lt;p&gt;the ${partName?lower_case} setter method.&lt;/p&gt;\n
+ * &lt;p&gt;The ${partName?lower_case} setter method.&lt;/p&gt;\n
  * \n
  &lt;#-- the method deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} method has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -608,21 +608,21 @@
         &lt;#if parameter.extendsListTypes?has_content&gt;
             &lt;#list parameter.extendsListTypes as extendType&gt;
                 &lt;#assign rawType = extendType.rawType()&gt; 
-                &lt;#assign presentableName = trim(rawType.presentableText)&gt; 
-                &lt;#assign canonicalName = trim(rawType.canonicalText)&gt;  
+                &lt;#assign presentableName = trim(rawType.getPresentableText(false))&gt; 
+                &lt;#assign canonicalName = trim(rawType.getCanonicalText(false))&gt;  
                 &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                     {@link ${canonicalName}}
                 &lt;#else&gt; 
                     ${canonicalName}
                 &lt;/#if&gt;
-                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                 &lt;p&gt;The generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !methodSees?contains(canonicalName)&gt; 
                     &lt;#assign methodSees = methodSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;#else&gt;
-            {@link java.lang.Object} &lt;p&gt;the parameter can be of any type.&lt;/p&gt; \n
+            {@link java.lang.Object} &lt;p&gt;The parameter can be of any type.&lt;/p&gt; \n
         &lt;/#if&gt;
     &lt;/#list&gt;
 &lt;/#if&gt;
@@ -631,15 +631,15 @@
 &lt;#if element.parameterList.parameters?has_content&gt;
     &lt;#list element.parameterList.parameters as parameter&gt;
         &lt;#assign parameterType = parameter.type&gt;
-        &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
-        &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
+        &lt;#assign presentableName = trim(parameterType.getPresentableText(false))&gt;
+        &lt;#assign canonicalName = trim(parameterType.getCanonicalText(false))&gt;         
         * @param ${parameter.name} 
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
             {@link ${canonicalName}}
         &lt;#else&gt; 
             ${canonicalName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${paramNames[parameter.name]?lower_case} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -662,15 +662,15 @@
 &lt;#-- the method return type --&gt;
 &lt;#if isNotVoid&gt;
     &lt;#assign returnType = element.returnType&gt; 
-    &lt;#assign presentableName = trim(returnType.presentableText)&gt;
-    &lt;#assign canonicalName = trim(returnType.canonicalText)&gt;
+    &lt;#assign presentableName = trim(returnType.getPresentableText(false))&gt;
+    &lt;#assign canonicalName = trim(returnType.getCanonicalText(false))&gt;
     * @return 
     &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
         {@link ${canonicalName}}
     &lt;#else&gt; 
         ${canonicalName}
     &lt;/#if&gt;
-     &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+     &lt;p&gt;The ${partName?lower_case} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
     &lt;#if !methodSees?contains(canonicalName)&gt; 
         &lt;#assign methodSees = methodSees + canonicalName&gt;  
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -701,7 +701,7 @@
         &lt;#else&gt; 
             ${qualifiedName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${exceptionNames[referenceName]?lower_case} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -718,7 +718,7 @@
  * \n
  &lt;#-- the method deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} method has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -740,7 +740,7 @@
  * \n
 &lt;#-- the method parameters --&gt;
 &lt;#if element.parameterList.parameters?has_content&gt;
-    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} &lt;p&gt;the input arguments.&lt;/p&gt;\n
+    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} &lt;p&gt;The input arguments.&lt;/p&gt;\n
     * @see java.lang.String  \n 
 &lt;/#if&gt;   
  * \n
@@ -766,7 +766,7 @@
         &lt;#else&gt; 
             ${qualifiedName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${exceptionNames[referenceName]?lower_case} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -779,11 +779,11 @@
           <KEY>.+</KEY>
           <VALUE>/**\n
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
- * &lt;p&gt;the ${partName?lower_case} method.&lt;/p&gt;\n
+ * &lt;p&gt;The ${partName?lower_case} method.&lt;/p&gt;\n
  * \n
  &lt;#-- the method deprecated annotation --&gt; 
  &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the ${element.name} method has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
 &lt;#-- the trim function is to trim the string of name --&gt; 
@@ -810,21 +810,21 @@
         &lt;#if parameter.extendsListTypes?has_content&gt;
             &lt;#list parameter.extendsListTypes as extendType&gt;
                 &lt;#assign rawType = extendType.rawType()&gt;
-                &lt;#assign presentableName = trim(rawType.presentableText)&gt;
-                &lt;#assign canonicalName = trim(rawType.canonicalText)&gt;  
+                &lt;#assign presentableName = trim(rawType.getPresentableText(false))&gt;
+                &lt;#assign canonicalName = trim(rawType.getCanonicalText(false))&gt;  
                 &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                     {@link ${canonicalName}}
                 &lt;#else&gt; 
                     ${canonicalName}
                 &lt;/#if&gt;
-                 &lt;p&gt;the generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+                 &lt;p&gt;The generic parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
                 &lt;#if !methodSees?contains(canonicalName)&gt; 
                     &lt;#assign methodSees = methodSees + canonicalName&gt;
                     * @see ${canonicalName}  \n 
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;#else&gt;
-            {@link java.lang.Object} &lt;p&gt;the parameter can be of any type.&lt;/p&gt; \n
+            {@link java.lang.Object} &lt;p&gt;The parameter can be of any type.&lt;/p&gt; \n
         &lt;/#if&gt;
     &lt;/#list&gt;
 &lt;/#if&gt;
@@ -833,15 +833,15 @@
 &lt;#if element.parameterList.parameters?has_content&gt;
     &lt;#list element.parameterList.parameters as parameter&gt;
         &lt;#assign parameterType = parameter.type&gt;
-        &lt;#assign presentableName = trim(parameterType.presentableText)&gt;
-        &lt;#assign canonicalName = trim(parameterType.canonicalText)&gt;         
+        &lt;#assign presentableName = trim(parameterType.getPresentableText(false))&gt;
+        &lt;#assign canonicalName = trim(parameterType.getCanonicalText(false))&gt;         
         * @param ${parameter.name} 
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
             {@link ${canonicalName}}
         &lt;#else&gt; 
             ${canonicalName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${paramNames[parameter.name]} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${paramNames[parameter.name]?lower_case} parameter is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(canonicalName)&gt; 
             &lt;#assign methodSees = methodSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -864,15 +864,15 @@
 &lt;#-- the method return type --&gt;
 &lt;#if isNotVoid&gt;
     &lt;#assign returnType = element.returnType&gt; 
-    &lt;#assign presentableName = trim(returnType.presentableText)&gt;
-    &lt;#assign canonicalName = trim(returnType.canonicalText)&gt;
+    &lt;#assign presentableName = trim(returnType.getPresentableText(false))&gt;
+    &lt;#assign canonicalName = trim(returnType.getCanonicalText(false))&gt;
     * @return 
     &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
         {@link ${canonicalName}}
     &lt;#else&gt; 
         ${canonicalName}
     &lt;/#if&gt;
-     &lt;p&gt;the ${partName} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
+     &lt;p&gt;The ${partName?lower_case} return object is &lt;code&gt;${presentableName}&lt;/code&gt; type.&lt;/p&gt; \n
     &lt;#if !methodSees?contains(canonicalName)&gt; 
         &lt;#assign methodSees = methodSees + canonicalName&gt;  
         &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
@@ -903,7 +903,7 @@
         &lt;#else&gt; 
             ${qualifiedName}
         &lt;/#if&gt;
-         &lt;p&gt;the ${exceptionNames[referenceName]} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
+         &lt;p&gt;The ${exceptionNames[referenceName]?lower_case} is &lt;code&gt;${referenceName}&lt;/code&gt; type.&lt;/p&gt; \n
         &lt;#if !methodSees?contains(qualifiedName)&gt; 
             &lt;#assign methodSees = methodSees + qualifiedName&gt;   
             * @see ${qualifiedName} \n
@@ -935,17 +935,17 @@
 &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt; 
  * \n
 &lt;#assign fieldType = element.type&gt; 
-&lt;#assign canonicalName = trim(fieldType.canonicalText)&gt;
+&lt;#assign canonicalName = trim(fieldType.getCanonicalText(false))&gt;
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
 &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
-    * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    * {@link ${canonicalName}} &lt;p&gt;The constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
 &lt;#else&gt; 
-    * &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+    * &lt;p&gt;The constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
  &lt;#-- the field deprecated annotation --&gt; 
 &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n 
 &lt;#-- the field type --&gt; 
@@ -989,25 +989,25 @@
 &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt; 
  * \n
 &lt;#assign fieldType = element.type&gt; 
-&lt;#assign canonicalName = trim(fieldType.canonicalText)&gt;
+&lt;#assign canonicalName = trim(fieldType.getCanonicalText(false))&gt;
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
 &lt;#if element.parent.isInterface()&gt;
     &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
-        * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+        * {@link ${canonicalName}} &lt;p&gt;The constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
     &lt;#else&gt; 
-        * &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+        * &lt;p&gt;The constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
     &lt;/#if&gt;
  &lt;#else&gt;
     &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
-        * {@link ${canonicalName}} &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+        * {@link ${canonicalName}} &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
     &lt;#else&gt; 
-        * &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+        * &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
     &lt;/#if&gt;
  &lt;/#if&gt;
  * \n
  &lt;#-- the field deprecated annotation --&gt; 
 &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n 
 &lt;#-- the field type --&gt; 
@@ -1051,23 +1051,23 @@
 &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt; 
  * \n
 &lt;#assign fieldType = element.type&gt; 
-&lt;#assign canonicalName = trim(fieldType.canonicalText)&gt;
+&lt;#assign canonicalName = trim(fieldType.getCanonicalText(false))&gt;
  * &lt;code&gt;${element.name}&lt;/code&gt;\n
  &lt;#if element.parent.isInterface()&gt;
     &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
-        * {@link ${canonicalName}} &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+        * {@link ${canonicalName}} &lt;p&gt;The constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
     &lt;#else&gt; 
-        * &lt;p&gt;the constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
+        * &lt;p&gt;The constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
     &lt;/#if&gt; 
  &lt;#elseif element.parent.isEnum()&gt;
-    * &lt;p&gt;the ${name} ${typeName} field.&lt;/p&gt;\n
+    * &lt;p&gt;The ${name?lower_case} ${typeName?lower_case} field.&lt;/p&gt;\n
  &lt;#else&gt;
-    * &lt;p&gt;the ${name} field.&lt;/p&gt;\n 
+    * &lt;p&gt;The ${name?lower_case} field.&lt;/p&gt;\n 
  &lt;/#if&gt;
  * \n
  &lt;#-- the field deprecated annotation --&gt; 
 &lt;#if element.isDeprecated()&gt;
-    * @deprecated &lt;p&gt;the &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
+    * @deprecated &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
 &lt;/#if&gt;
  * \n
 &lt;#-- the field type --&gt; 

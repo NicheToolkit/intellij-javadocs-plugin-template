@@ -24,6 +24,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 ## Javadoc Plugin Settings Keymap
 
 <!-- 接口 检测模板 -->
+
 ### Keymap Settings Notes
 
 > set keymap use `ctrl`+`alt`+`/` replace `shift`+`ctrl`+`alt`+`G` to generate javadocs for all elements
@@ -96,21 +97,21 @@ import java.io.Serializable;
 /**
  * <code>TheInterfaceExample</code>
  * <p>The type the interface example interface.</p>
- * @param <I> {@link java.lang.Object} <p>the parameter can be of any type.</p>
- * @param <E> {@link io.github.nichetoolkit.example.TheInterfaceExample} <p>the generic parameter is <code>TheInterfaceExample</code> type.</p>
+ * @param <I> {@link java.lang.Object} <p>The parameter can be of any type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.TheInterfaceExample} <p>The generic parameter is <code>TheInterfaceExample</code> type.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see java.io.Serializable
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>the TheInterfaceExample interface has be deprecated.</p>
+ * @deprecated <p>The the interface example interface has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
 public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> extends Serializable {
     /**
      * <code>INTERFACE_FIELD_EXAMPLE</code>
-     * {@link java.lang.String} <p>the constant <code>INTERFACE_FIELD_EXAMPLE</code> field.</p>
+     * {@link java.lang.String} <p>The constant <code>INTERFACE_FIELD_EXAMPLE</code> field.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonIgnore
      */
@@ -119,8 +120,8 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
 
     /**
      * <code>getInterfaceField</code>
-     * <p>the interface field getter method.</p>
-     * @return {@link java.lang.String} <p>the interface field return object is <code>String</code> type.</p>
+     * <p>The interface field getter method.</p>
+     * @return {@link java.lang.String} <p>The interface field return object is <code>String</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonValue
      * @see org.springframework.lang.NonNull
@@ -131,8 +132,8 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
 
     /**
      * <code>setInterfaceField</code>
-     * <p>the interface field setter method.</p>
-     * @param interfaceField {@link java.lang.String} <p>the interface field parameter is <code>String</code> type.</p>
+     * <p>The interface field setter method.</p>
+     * @param interfaceField {@link java.lang.String} <p>The interface field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
      * @see com.fasterxml.jackson.annotation.JsonCreator
@@ -142,12 +143,12 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
 
     /**
      * <code>theMethodExample</code>
-     * <p>the method example method.</p>
-     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param param2 {@link java.lang.String} <p>the param 2 parameter is <code>String</code> type.</p>
-     * @param param3 {@link java.lang.String} <p>the param 3 parameter is <code>String</code> type.</p>
-     * @return {@link java.lang.String} <p>the method example return object is <code>String</code> type.</p>
-     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param param2 {@link java.lang.String} <p>The param 2 parameter is <code>String</code> type.</p>
+     * @param param3 {@link java.lang.String} <p>The param 3 parameter is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>The method example return object is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
@@ -161,28 +162,28 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
 
     /**
      * <code>theVoidMethodExample</code>
-     * <p>the void method example method.</p>
-     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param params {@link java.lang.String} <p>the params parameter is <code>String</code> type.</p>
-     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * <p>The void method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params {@link java.lang.String} <p>The params parameter is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
      * @see java.lang.Deprecated
      * @see io.github.nichetoolkit.rest.RestException
-     * @deprecated <p>the theVoidMethodExample method has be deprecated.</p>
+     * @deprecated <p>The the void method example method has be deprecated.</p>
      */
     @Deprecated
     default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
 
     /**
      * <code>theMethodExample</code>
-     * <p>the method example method.</p>
-     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param params int <p>the params parameter is <code>int</code> type.</p>
-     * @return int <p>the method example return object is <code>int</code> type.</p>
-     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params int <p>The params parameter is <code>int</code> type.</p>
+     * @return int <p>The method example return object is <code>int</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see org.springframework.lang.NonNull
@@ -261,28 +262,26 @@ import java.util.Optional;
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>the TheEnumExample enumeration has be deprecated.</p>
+ * @deprecated <p>The the enum example enumeration has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
 public enum TheEnumExample implements RestKey<String> {
     /**
      * <code>CASE1</code>
-     * <p>the Case 1 the enum example field.</p>
-     * @see io.github.nichetoolkit.example.TheEnumExample
+     * <p>The case 1 the enum example field.</p>
      */
     CASE1("case1"),
     /**
      * <code>CASE2</code>
-     * <p>the Case 2 the enum example field.</p>
-     * @see io.github.nichetoolkit.example.TheEnumExample
+     * <p>The case 2 the enum example field.</p>
      */
     CASE2("case2"),
     ;
 
     /**
      * <code>ENUM_FIELD_EXAMPLE</code>
-     * {@link String} <p>the constant <code>ENUM_FIELD_EXAMPLE</code> field.</p>
+     * {@link java.lang.String} <p>The constant <code>ENUM_FIELD_EXAMPLE</code> field.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonIgnore
      */
@@ -291,15 +290,15 @@ public enum TheEnumExample implements RestKey<String> {
 
     /**
      * <code>key</code>
-     * {@link String} <p>the <code>key</code> field.</p>
+     * {@link java.lang.String} <p>The <code>key</code> field.</p>
      * @see java.lang.String
      */
     private final String key;
 
     /**
      * <code>TheEnumExample</code>
-     * Instantiates a new the enum example.
-     * @param key {@link String} <p>the key parameter is <code>String</code> type.</p>
+     * <p>Instantiates a new the enum example.</p>
+     * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
      * @see java.lang.String
      */
     TheEnumExample(String key) {
@@ -314,9 +313,9 @@ public enum TheEnumExample implements RestKey<String> {
 
     /**
      * <code>parseKey</code>
-     * <p>the key method.</p>
-     * @param key {@link String} <p>the key parameter is <code>String</code> type.</p>
-     * @return {@link TheEnumExample} <p>the key return object is <code>TheEnumExample</code> type.</p>
+     * <p>The key method.</p>
+     * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
+     * @return {@link io.github.nichetoolkit.example.TheEnumExample} <p>The key return object is <code>TheEnumExample</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonCreator
      */
@@ -405,40 +404,45 @@ import java.io.Serializable;
 /**
  * <code>TheClassExample</code>
  * <p>The type the class example class.</p>
- * @param <I> {@link java.lang.Object} <p>the parameter can be of any type.</p>
- * @param <E> {@link io.github.nichetoolkit.example.TheClassExample} <p>the generic parameter is <code>TheClassExample</code> type.</p>
+ * @param <I> {@link java.lang.Object} <p>The parameter can be of any type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.TheClassExample} <p>The generic parameter is <code>TheClassExample</code> type.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see java.io.Serializable
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>the TheClassExample class has be deprecated.</p>
+ * @deprecated <p>The the class example class has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
 public class TheClassExample<I, E extends TheClassExample<I, E>> implements Serializable {
     /**
      * <code>CLASS_FIELD_EXAMPLE</code>
-     * {@link java.lang.String} <p>the constant <code>CLASS_FIELD_EXAMPLE</code> field.</p>
+     * {@link java.lang.String} <p>The constant <code>CLASS_FIELD_EXAMPLE</code> field.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonIgnore
      */
     @JsonIgnore
     public static final String CLASS_FIELD_EXAMPLE = "CLASS_FIELD_EXAMPLE";
 
+    /**
+     * <code>classField</code>
+     * {@link java.lang.String} <p>The <code>classField</code> field.</p>
+     * @see java.lang.String
+     */
     private String classField;
 
     /**
      * <code>TheClassExample</code>
-     * Instantiates a new the class example.
+     * <p>Instantiates a new the class example.</p>
      */
     public TheClassExample() {
     }
 
     /**
      * <code>TheClassExample</code>
-     * Instantiates a new the class example.
-     * @param classField {@link java.lang.String} <p>the class field parameter is <code>String</code> type.</p>
+     * <p>Instantiates a new the class example.</p>
+     * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      */
     public TheClassExample(String classField) {
@@ -447,8 +451,8 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 
     /**
      * <code>getClassField</code>
-     * <p>the class field getter method.</p>
-     * @return {@link java.lang.String} <p>the class field return object is <code>String</code> type.</p>
+     * <p>The class field getter method.</p>
+     * @return {@link java.lang.String} <p>The class field return object is <code>String</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonValue
      * @see org.springframework.lang.NonNull
@@ -461,8 +465,8 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 
     /**
      * <code>setClassField</code>
-     * <p>the class field setter method.</p>
-     * @param classField {@link java.lang.String} <p>the class field parameter is <code>String</code> type.</p>
+     * <p>The class field setter method.</p>
+     * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
      * @see com.fasterxml.jackson.annotation.JsonCreator
@@ -474,12 +478,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 
     /**
      * <code>theMethodExample</code>
-     * <p>the method example method.</p>
-     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param param2 {@link java.lang.String} <p>the param 2 parameter is <code>String</code> type.</p>
-     * @param param3 {@link java.lang.String} <p>the param 3 parameter is <code>String</code> type.</p>
-     * @return {@link java.lang.String} <p>the method example return object is <code>String</code> type.</p>
-     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param param2 {@link java.lang.String} <p>The param 2 parameter is <code>String</code> type.</p>
+     * @param param3 {@link java.lang.String} <p>The param 3 parameter is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>The method example return object is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
@@ -493,17 +497,17 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 
     /**
      * <code>theVoidMethodExample</code>
-     * <p>the void method example method.</p>
-     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param params {@link java.lang.String} <p>the params parameter is <code>String</code> type.</p>
-     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * <p>The void method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params {@link java.lang.String} <p>The params parameter is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
      * @see java.lang.Deprecated
      * @see io.github.nichetoolkit.rest.RestException
-     * @deprecated <p>the theVoidMethodExample method has be deprecated.</p>
+     * @deprecated <p>The the void method example method has be deprecated.</p>
      */
     @Deprecated
     public void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
@@ -511,11 +515,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 
     /**
      * <code>theMethodExample</code>
-     * <p>the method example method.</p>
-     * @param param1 {@link java.lang.Integer} <p>the param 1 parameter is <code>Integer</code> type.</p>
-     * @param params int <p>the params parameter is <code>int</code> type.</p>
-     * @return int <p>the method example return object is <code>int</code> type.</p>
-     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>the rest exception is <code>RestException</code> type.</p>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params int <p>The params parameter is <code>int</code> type.</p>
+     * @return int <p>The method example return object is <code>int</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
      * @see java.lang.Integer
      * @see org.springframework.lang.Nullable
      * @see org.springframework.lang.NonNull
@@ -549,7 +553,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * \n
  <#-- the interface deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} interface has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} interface has be deprecated.</p>\n
 </#if> 
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -576,21 +580,21 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#if parameter.extendsListTypes?has_content>
             <#list parameter.extendsListTypes as extendType>
                 <#assign rawType = extendType.rawType()> 
-                <#assign presentableName = trim(rawType.presentableText)> 
-                <#assign canonicalName = trim(rawType.canonicalText)> 
+                <#assign presentableName = trim(rawType.getPresentableText(false))> 
+                <#assign canonicalName = trim(rawType.getCanonicalText(false))> 
                 <#if canonicalName?contains(".")>
                     {@link ${canonicalName}}
                 <#else> 
                     ${canonicalName}
                 </#if>
-                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                 <p>The generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
                 </#if>
             </#list>
         <#else>
-            {@link java.lang.Object} <p>the parameter can be of any type.</p> \n
+            {@link java.lang.Object} <p>The parameter can be of any type.</p> \n
         </#if>
     </#list>
 </#if>
@@ -598,7 +602,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the interface extends class types-->
 <#if element.extendsListTypes?has_content>
     <#list element.extendsListTypes as extendType>
-        <#assign canonicalName = trim(extendType.rawType().canonicalText)>        
+        <#assign canonicalName = trim(extendType.rawType().getCanonicalText(false))>        
         <#if !classSees?contains(canonicalName)> 
             <#assign classSees = classSees + canonicalName>                  
             * @see ${canonicalName} \n
@@ -637,7 +641,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * \n
  <#-- the enumeration deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} enumeration has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} enumeration has be deprecated.</p>\n
 </#if>
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -660,7 +664,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the enumeration implements interface types-->
 <#if element.implementsListTypes?has_content>
     <#list element.implementsListTypes as implementType>
-        <#assign canonicalName = trim(implementType.rawType().canonicalText)>
+        <#assign canonicalName = trim(implementType.rawType().getCanonicalText(false))>
         <#if !classSees?contains(canonicalName)> 
             <#assign classSees = classSees + canonicalName>                  
             * @see ${canonicalName} \n
@@ -699,7 +703,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * \n
  <#-- the class deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} class has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} class has be deprecated.</p>\n
 </#if> 
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -726,21 +730,21 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#if parameter.extendsListTypes?has_content>
             <#list parameter.extendsListTypes as extendType>
                 <#assign rawType = extendType.rawType()> 
-                <#assign presentableName = trim(rawType.presentableText)> 
-                <#assign canonicalName = trim(rawType.canonicalText)> 
+                <#assign presentableName = trim(rawType.getPresentableText(false))> 
+                <#assign canonicalName = trim(rawType.getCanonicalText(false))> 
                 <#if canonicalName?contains(".")>
                     {@link ${canonicalName}}
                 <#else> 
                     ${canonicalName}
                 </#if>
-                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                 <p>The generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
                 </#if>
             </#list>
         <#else>
-            {@link java.lang.Object} <p>the parameter can be of any type.</p> \n
+            {@link java.lang.Object} <p>The parameter can be of any type.</p> \n
         </#if>
     </#list>
 </#if>
@@ -748,7 +752,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the class extends class types-->
 <#if element.extendsListTypes?has_content>
     <#list element.extendsListTypes as extendType>
-        <#assign canonicalName = trim(extendType.rawType().canonicalText)>        
+        <#assign canonicalName = trim(extendType.rawType().getCanonicalText(false))>        
         <#if !classSees?contains(canonicalName)> 
             <#assign classSees = classSees + canonicalName>                  
             * @see ${canonicalName} \n
@@ -759,7 +763,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the class implements interface types-->
 <#if element.implementsListTypes?has_content>
     <#list element.implementsListTypes as implementType>
-        <#assign canonicalName = trim(implementType.rawType().canonicalText)>
+        <#assign canonicalName = trim(implementType.rawType().getCanonicalText(false))>
         <#if !classSees?contains(canonicalName)> 
             <#assign classSees = classSees + canonicalName>                  
             * @see ${canonicalName} \n
@@ -804,7 +808,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * \n
  <#-- the class deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} class has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} class has be deprecated.</p>\n
 </#if> 
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -831,21 +835,21 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#if parameter.extendsListTypes?has_content>
             <#list parameter.extendsListTypes as extendType>
                 <#assign rawType = extendType.rawType()> 
-                <#assign presentableName = trim(rawType.presentableText)> 
-                <#assign canonicalName = trim(rawType.canonicalText)> 
+                <#assign presentableName = trim(rawType.getPresentableText(false))> 
+                <#assign canonicalName = trim(rawType.getCanonicalText(false))> 
                 <#if canonicalName?contains(".")>
                     {@link ${canonicalName}}
                 <#else> 
                     ${canonicalName}
                 </#if>
-                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                 <p>The generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !classSees?contains(canonicalName)> 
                     <#assign classSees = classSees + canonicalName>
                     * @see ${canonicalName}  \n 
                 </#if>
             </#list>
         <#else>
-            {@link java.lang.Object} <p>the parameter can be of any type.</p> \n
+            {@link java.lang.Object} <p>The parameter can be of any type.</p> \n
         </#if>
     </#list>
 </#if>
@@ -853,7 +857,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the class extends class types-->
 <#if element.extendsListTypes?has_content>
     <#list element.extendsListTypes as extendType>
-        <#assign canonicalName = trim(extendType.rawType().canonicalText)>        
+        <#assign canonicalName = trim(extendType.rawType().getCanonicalText(false))>        
         <#if !classSees?contains(canonicalName)> 
             <#assign classSees = classSees + canonicalName>                  
             * @see ${canonicalName} \n
@@ -864,7 +868,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the class implements interface types-->
 <#if element.implementsListTypes?has_content>
     <#list element.implementsListTypes as implementType>
-        <#assign canonicalName = trim(implementType.rawType().canonicalText)>
+        <#assign canonicalName = trim(implementType.rawType().getCanonicalText(false))>
         <#if !classSees?contains(canonicalName)> 
             <#assign classSees = classSees + canonicalName>                  
             * @see ${canonicalName} \n
@@ -898,11 +902,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * Instantiates a new ${name?lower_case}.\n
+ * <p>Instantiates a new ${name?lower_case}.</p>\n
  * \n
  <#-- the method deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} method has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -926,15 +930,15 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
         <#assign parameterType = parameter.type>
-        <#assign presentableName = trim(parameterType.presentableText)>
-        <#assign canonicalName = trim(parameterType.canonicalText)>         
+        <#assign presentableName = trim(parameterType.getPresentableText(false))>
+        <#assign canonicalName = trim(parameterType.getCanonicalText(false))>         
         * @param ${parameter.name} 
         <#if canonicalName?contains(".")>
             {@link ${canonicalName}}
         <#else> 
             ${canonicalName}
         </#if>
-         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+         <p>The ${paramNames[parameter.name]?lower_case} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -976,7 +980,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#else> 
             ${qualifiedName}
         </#if>
-         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+         <p>The ${exceptionNames[referenceName]?lower_case} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -999,11 +1003,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>the ${partName?lower_case} getter method.</p>\n
+ * <p>The ${partName?lower_case} getter method.</p>\n
  * \n
  <#-- the method deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} method has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -1030,21 +1034,21 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#if parameter.extendsListTypes?has_content>
             <#list parameter.extendsListTypes as extendType>
                 <#assign rawType = extendType.rawType()> 
-                <#assign presentableName = trim(rawType.presentableText)> 
-                <#assign canonicalName = trim(rawType.canonicalText)>  
+                <#assign presentableName = trim(rawType.getPresentableText(false))> 
+                <#assign canonicalName = trim(rawType.getCanonicalText(false))>  
                 <#if canonicalName?contains(".")>
                     {@link ${canonicalName}}
                 <#else> 
                     ${canonicalName}
                 </#if>
-                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                 <p>The generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
                 </#if>
             </#list>
         <#else>
-            {@link java.lang.Object} <p>the parameter can be of any type.</p> \n
+            {@link java.lang.Object} <p>The parameter can be of any type.</p> \n
         </#if>
     </#list>
 </#if>
@@ -1053,15 +1057,15 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
         <#assign parameterType = parameter.type>
-        <#assign presentableName = trim(parameterType.presentableText)>
-        <#assign canonicalName = trim(parameterType.canonicalText)>         
+        <#assign presentableName = trim(parameterType.getPresentableText(false))>
+        <#assign canonicalName = trim(parameterType.getCanonicalText(false))>         
         * @param ${parameter.name}  
         <#if canonicalName?contains(".")>
             {@link ${canonicalName}}
         <#else> 
             ${canonicalName}
         </#if>
-         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+         <p>The ${paramNames[parameter.name]?lower_case} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -1084,15 +1088,15 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the method return type -->
 <#if isNotVoid>
     <#assign returnType = element.returnType> 
-    <#assign presentableName = trim(returnType.presentableText)>
-    <#assign canonicalName = trim(returnType.canonicalText)>
+    <#assign presentableName = trim(returnType.getPresentableText(false))>
+    <#assign canonicalName = trim(returnType.getCanonicalText(false))>
     * @return 
     <#if canonicalName?contains(".")>
         {@link ${canonicalName}}
     <#else> 
         ${canonicalName}
     </#if>
-     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+     <p>The ${partName?lower_case} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1123,7 +1127,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#else> 
             ${qualifiedName}
         </#if>
-         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+         <p>The ${exceptionNames[referenceName]?lower_case} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1144,11 +1148,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>the ${partName?lower_case} setter method.</p>\n
+ * <p>The ${partName?lower_case} setter method.</p>\n
  * \n
  <#-- the method deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} method has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -1175,21 +1179,21 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#if parameter.extendsListTypes?has_content>
             <#list parameter.extendsListTypes as extendType>
                 <#assign rawType = extendType.rawType()> 
-                <#assign presentableName = trim(rawType.presentableText)> 
-                <#assign canonicalName = trim(rawType.canonicalText)>  
+                <#assign presentableName = trim(rawType.getPresentableText(false))> 
+                <#assign canonicalName = trim(rawType.getCanonicalText(false))>  
                 <#if canonicalName?contains(".")>
                     {@link ${canonicalName}}
                 <#else> 
                     ${canonicalName}
                 </#if>
-                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                 <p>The generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
                 </#if>
             </#list>
         <#else>
-            {@link java.lang.Object} <p>the parameter can be of any type.</p> \n
+            {@link java.lang.Object} <p>The parameter can be of any type.</p> \n
         </#if>
     </#list>
 </#if>
@@ -1198,15 +1202,15 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
         <#assign parameterType = parameter.type>
-        <#assign presentableName = trim(parameterType.presentableText)>
-        <#assign canonicalName = trim(parameterType.canonicalText)>         
+        <#assign presentableName = trim(parameterType.getPresentableText(false))>
+        <#assign canonicalName = trim(parameterType.getCanonicalText(false))>         
         * @param ${parameter.name} 
         <#if canonicalName?contains(".")>
             {@link ${canonicalName}}
         <#else> 
             ${canonicalName}
         </#if>
-         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+         <p>The ${paramNames[parameter.name]?lower_case} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -1229,15 +1233,15 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the method return type -->
 <#if isNotVoid>
     <#assign returnType = element.returnType> 
-    <#assign presentableName = trim(returnType.presentableText)>
-    <#assign canonicalName = trim(returnType.canonicalText)>
+    <#assign presentableName = trim(returnType.getPresentableText(false))>
+    <#assign canonicalName = trim(returnType.getCanonicalText(false))>
     * @return 
     <#if canonicalName?contains(".")>
         {@link ${canonicalName}}
     <#else> 
         ${canonicalName}
     </#if>
-     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+     <p>The ${partName?lower_case} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1268,7 +1272,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#else> 
             ${qualifiedName}
         </#if>
-         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+         <p>The ${exceptionNames[referenceName]?lower_case} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1293,7 +1297,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * \n
  <#-- the method deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} method has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -1315,7 +1319,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
  * \n
 <#-- the method parameters -->
 <#if element.parameterList.parameters?has_content>
-    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} <p>the input arguments.</p>\n
+    * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} <p>The input arguments.</p>\n
     * @see java.lang.String  \n 
 </#if>   
  * \n
@@ -1341,7 +1345,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#else> 
             ${qualifiedName}
         </#if>
-         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+         <p>The ${exceptionNames[referenceName]?lower_case} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1363,11 +1367,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>the ${partName?lower_case} method.</p>\n
+ * <p>The ${partName?lower_case} method.</p>\n
  * \n
  <#-- the method deprecated annotation --> 
  <#if element.isDeprecated()>
-    * @deprecated <p>the ${element.name} method has be deprecated.</p>\n
+    * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
  * \n
 <#-- the trim function is to trim the string of name --> 
@@ -1394,21 +1398,21 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#if parameter.extendsListTypes?has_content>
             <#list parameter.extendsListTypes as extendType>
                 <#assign rawType = extendType.rawType()>
-                <#assign presentableName = trim(rawType.presentableText)>
-                <#assign canonicalName = trim(rawType.canonicalText)>  
+                <#assign presentableName = trim(rawType.getPresentableText(false))>
+                <#assign canonicalName = trim(rawType.getCanonicalText(false))>  
                 <#if canonicalName?contains(".")>
                     {@link ${canonicalName}}
                 <#else> 
                     ${canonicalName}
                 </#if>
-                 <p>the generic parameter is <code>${presentableName}</code> type.</p> \n
+                 <p>The generic parameter is <code>${presentableName}</code> type.</p> \n
                 <#if !methodSees?contains(canonicalName)> 
                     <#assign methodSees = methodSees + canonicalName>
                     * @see ${canonicalName}  \n 
                 </#if>
             </#list>
         <#else>
-            {@link java.lang.Object} <p>the parameter can be of any type.</p> \n
+            {@link java.lang.Object} <p>The parameter can be of any type.</p> \n
         </#if>
     </#list>
 </#if>
@@ -1417,15 +1421,15 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
         <#assign parameterType = parameter.type>
-        <#assign presentableName = trim(parameterType.presentableText)>
-        <#assign canonicalName = trim(parameterType.canonicalText)>         
+        <#assign presentableName = trim(parameterType.getPresentableText(false))>
+        <#assign canonicalName = trim(parameterType.getCanonicalText(false))>         
         * @param ${parameter.name} 
         <#if canonicalName?contains(".")>
             {@link ${canonicalName}}
         <#else> 
             ${canonicalName}
         </#if>
-         <p>the ${paramNames[parameter.name]} parameter is <code>${presentableName}</code> type.</p> \n
+         <p>The ${paramNames[parameter.name]?lower_case} parameter is <code>${presentableName}</code> type.</p> \n
         <#if !methodSees?contains(canonicalName)> 
             <#assign methodSees = methodSees + canonicalName>
             <#if canonicalName?contains(".")>
@@ -1448,15 +1452,15 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#-- the method return type -->
 <#if isNotVoid>
     <#assign returnType = element.returnType> 
-    <#assign presentableName = trim(returnType.presentableText)>
-    <#assign canonicalName = trim(returnType.canonicalText)>
+    <#assign presentableName = trim(returnType.getPresentableText(false))>
+    <#assign canonicalName = trim(returnType.getCanonicalText(false))>
     * @return 
     <#if canonicalName?contains(".")>
         {@link ${canonicalName}}
     <#else> 
         ${canonicalName}
     </#if>
-     <p>the ${partName} return object is <code>${presentableName}</code> type.</p> \n
+     <p>The ${partName?lower_case} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1487,7 +1491,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#else> 
             ${qualifiedName}
         </#if>
-         <p>the ${exceptionNames[referenceName]} is <code>${referenceName}</code> type.</p> \n
+         <p>The ${exceptionNames[referenceName]?lower_case} is <code>${referenceName}</code> type.</p> \n
         <#if !methodSees?contains(qualifiedName)> 
             <#assign methodSees = methodSees + qualifiedName>   
             * @see ${qualifiedName} \n
@@ -1527,17 +1531,17 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#assign fieldSees = trim(element.parent.qualifiedName)> 
  * \n
 <#assign fieldType = element.type> 
-<#assign canonicalName = trim(fieldType.canonicalText)>
+<#assign canonicalName = trim(fieldType.getCanonicalText(false))>
  * <code>${element.name}</code>\n
 <#if canonicalName?contains(".")>
-    * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+    * {@link ${canonicalName}} <p>The constant <code>${element.name}</code> field.</p>\n
 <#else> 
-    * <p>the constant <code>${element.name}</code> field.</p>\n
+    * <p>The constant <code>${element.name}</code> field.</p>\n
 </#if>
  * \n
  <#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
-    * @deprecated <p>the <code>${element.name}</code> field has be deprecated.</p>\n
+    * @deprecated <p>The <code>${element.name}</code> field has be deprecated.</p>\n
 </#if>
  * \n 
 <#-- the field type --> 
@@ -1590,25 +1594,25 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#assign fieldSees = trim(element.parent.qualifiedName)> 
  * \n
 <#assign fieldType = element.type> 
-<#assign canonicalName = trim(fieldType.canonicalText)>
+<#assign canonicalName = trim(fieldType.getCanonicalText(false))>
  * <code>${element.name}</code>\n
 <#if element.parent.isInterface()>
     <#if canonicalName?contains(".")>
-        * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+        * {@link ${canonicalName}} <p>The constant <code>${element.name}</code> field.</p>\n
     <#else> 
-        * <p>the constant <code>${element.name}</code> field.</p>\n
+        * <p>The constant <code>${element.name}</code> field.</p>\n
     </#if>
  <#else>
     <#if canonicalName?contains(".")>
-        * {@link ${canonicalName}} <p>the <code>${element.name}</code> field.</p>\n
+        * {@link ${canonicalName}} <p>The <code>${element.name}</code> field.</p>\n
     <#else> 
-        * <p>the <code>${element.name}</code> field.</p>\n
+        * <p>The <code>${element.name}</code> field.</p>\n
     </#if>
  </#if>
  * \n
  <#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
-    * @deprecated <p>the <code>${element.name}</code> field has be deprecated.</p>\n
+    * @deprecated <p>The <code>${element.name}</code> field has be deprecated.</p>\n
 </#if>
  * \n 
 <#-- the field type --> 
@@ -1661,23 +1665,23 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#assign fieldSees = trim(element.parent.qualifiedName)> 
  * \n
 <#assign fieldType = element.type> 
-<#assign canonicalName = trim(fieldType.canonicalText)>
+<#assign canonicalName = trim(fieldType.getCanonicalText(false))>
  * <code>${element.name}</code>\n
  <#if element.parent.isInterface()>
     <#if canonicalName?contains(".")>
-        * {@link ${canonicalName}} <p>the constant <code>${element.name}</code> field.</p>\n
+        * {@link ${canonicalName}} <p>The constant <code>${element.name}</code> field.</p>\n
     <#else> 
-        * <p>the constant <code>${element.name}</code> field.</p>\n
+        * <p>The constant <code>${element.name}</code> field.</p>\n
     </#if> 
  <#elseif element.parent.isEnum()>
-    * <p>the ${name} ${typeName} field.</p>\n
+    * <p>The ${name?lower_case} ${typeName?lower_case} field.</p>\n
  <#else>
-    * <p>the ${name} field.</p>\n 
+    * <p>The ${name?lower_case} field.</p>\n 
  </#if>
  * \n
  <#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
-    * @deprecated <p>the <code>${element.name}</code> field has be deprecated.</p>\n
+    * @deprecated <p>The <code>${element.name}</code> field has be deprecated.</p>\n
 </#if>
  * \n
 <#-- the field type --> 

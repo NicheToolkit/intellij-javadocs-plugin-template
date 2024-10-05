@@ -1,0 +1,498 @@
+# Interface Example
+
+-  Code
+```java
+package io.github.nichetoolkit.example;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.github.nichetoolkit.rest.RestException;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
+
+import java.io.Serializable;
+
+@Deprecated
+@SuppressWarnings({"UnnecessaryParentheses", "unused"})
+public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> extends Serializable {
+    @JsonIgnore
+    String INTERFACE_FIELD_EXAMPLE = "INTERFACE_FIELD_EXAMPLE";
+
+    @JsonValue
+    @NonNull
+    String getInterfaceField();
+
+    @JsonCreator
+    void setInterfaceField(@NonNull String interfaceField);
+
+    @NonNull
+    default String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+        return new String[0];
+    }
+
+    @Deprecated
+    default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
+
+    @NonNull
+    default int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
+}
+
+```
+
+
+-  Doc
+```java
+package io.github.nichetoolkit.example;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.github.nichetoolkit.rest.RestException;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
+
+import java.io.Serializable;
+
+/**
+ * <code>TheInterfaceExample</code>
+ * <p>The type the interface example interface.</p>
+ * @param <I> {@link java.lang.Object} <p>The parameter can be of any type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.TheInterfaceExample} <p>The generic parameter is <code>TheInterfaceExample</code> type.</p>
+ * @author Cyan (snow22314@outlook.com)
+ * @see java.io.Serializable
+ * @see java.lang.Deprecated
+ * @see java.lang.SuppressWarnings
+ * @since Jdk1.8
+ * @deprecated <p>The the interface example interface has be deprecated.</p>
+ */
+@Deprecated
+@SuppressWarnings({"UnnecessaryParentheses", "unused"})
+public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> extends Serializable {
+    /**
+     * <code>INTERFACE_FIELD_EXAMPLE</code>
+     * {@link java.lang.String} <p>The constant <code>INTERFACE_FIELD_EXAMPLE</code> field.</p>
+     * @see java.lang.String
+     * @see com.fasterxml.jackson.annotation.JsonIgnore
+     */
+    @JsonIgnore
+    String INTERFACE_FIELD_EXAMPLE = "INTERFACE_FIELD_EXAMPLE";
+
+    /**
+     * <code>getInterfaceField</code>
+     * <p>The interface field getter method.</p>
+     * @return {@link java.lang.String} <p>The interface field return object is <code>String</code> type.</p>
+     * @see java.lang.String
+     * @see com.fasterxml.jackson.annotation.JsonValue
+     * @see org.springframework.lang.NonNull
+     */
+    @JsonValue
+    @NonNull
+    String getInterfaceField();
+
+    /**
+     * <code>setInterfaceField</code>
+     * <p>The interface field setter method.</p>
+     * @param interfaceField {@link java.lang.String} <p>The interface field parameter is <code>String</code> type.</p>
+     * @see java.lang.String
+     * @see org.springframework.lang.NonNull
+     * @see com.fasterxml.jackson.annotation.JsonCreator
+     */
+    @JsonCreator
+    void setInterfaceField(@NonNull String interfaceField);
+
+    /**
+     * <code>theMethodExample</code>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param param2 {@link java.lang.String} <p>The param 2 parameter is <code>String</code> type.</p>
+     * @param param3 {@link java.lang.String} <p>The param 3 parameter is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>The method example return object is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see java.lang.String
+     * @see org.springframework.lang.NonNull
+     * @see io.github.nichetoolkit.rest.RestException
+     */
+    @NonNull
+    default String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+        return new String[0];
+    }
+
+    /**
+     * <code>theVoidMethodExample</code>
+     * <p>The void method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params {@link java.lang.String} <p>The params parameter is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see java.lang.String
+     * @see org.springframework.lang.NonNull
+     * @see java.lang.Deprecated
+     * @see io.github.nichetoolkit.rest.RestException
+     * @deprecated <p>The the void method example method has be deprecated.</p>
+     */
+    @Deprecated
+    default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
+
+    /**
+     * <code>theMethodExample</code>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params int <p>The params parameter is <code>int</code> type.</p>
+     * @return int <p>The method example return object is <code>int</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see org.springframework.lang.NonNull
+     * @see io.github.nichetoolkit.rest.RestException
+     */
+    @NonNull
+    default int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
+}
+
+```
+
+# Enum Example
+
+-  Code
+```java
+package io.github.nichetoolkit.example;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.github.nichetoolkit.rest.RestKey;
+
+import java.util.Optional;
+
+@Deprecated
+@SuppressWarnings({"UnnecessaryParentheses", "unused"})
+public enum TheEnumExample implements RestKey<String> {
+    CASE1("case1"),
+    CASE2("case2"),
+    ;
+
+    @JsonIgnore
+    private static final String ENUM_FIELD_EXAMPLE = "ENUM_FIELD_EXAMPLE";
+    
+    private final String key;
+
+    TheEnumExample(String key) {
+        this.key = key;
+    }
+
+    @JsonValue
+    @Override
+    public String getKey() {
+        return this.key;
+    }
+
+    @JsonCreator
+    public static TheEnumExample parseKey(String key) {
+        TheEnumExample enumExample = RestKey.parseKey(TheEnumExample.class, key);
+        return Optional.ofNullable(enumExample).orElse(CASE1);
+    }
+
+}
+
+```
+
+-  doc
+```java
+package io.github.nichetoolkit.example;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.github.nichetoolkit.rest.RestKey;
+
+import java.util.Optional;
+
+/**
+ * <code>TheEnumExample</code>
+ * <p>The type the enum example enumeration.</p>
+ * @author Cyan (snow22314@outlook.com)
+ * @see io.github.nichetoolkit.rest.RestKey
+ * @see java.lang.Deprecated
+ * @see java.lang.SuppressWarnings
+ * @since Jdk1.8
+ * @deprecated <p>The the enum example enumeration has be deprecated.</p>
+ */
+@Deprecated
+@SuppressWarnings({"UnnecessaryParentheses", "unused"})
+public enum TheEnumExample implements RestKey<String> {
+    /**
+     * <code>CASE1</code>
+     * <p>The case 1 the enum example field.</p>
+     */
+    CASE1("case1"),
+    /**
+     * <code>CASE2</code>
+     * <p>The case 2 the enum example field.</p>
+     */
+    CASE2("case2"),
+    ;
+
+    /**
+     * <code>ENUM_FIELD_EXAMPLE</code>
+     * {@link java.lang.String} <p>The constant <code>ENUM_FIELD_EXAMPLE</code> field.</p>
+     * @see java.lang.String
+     * @see com.fasterxml.jackson.annotation.JsonIgnore
+     */
+    @JsonIgnore
+    private static final String ENUM_FIELD_EXAMPLE = "ENUM_FIELD_EXAMPLE";
+
+    /**
+     * <code>key</code>
+     * {@link java.lang.String} <p>The <code>key</code> field.</p>
+     * @see java.lang.String
+     */
+    private final String key;
+
+    /**
+     * <code>TheEnumExample</code>
+     * <p>Instantiates a new the enum example.</p>
+     * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
+     * @see java.lang.String
+     */
+    TheEnumExample(String key) {
+        this.key = key;
+    }
+
+    @JsonValue
+    @Override
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <code>parseKey</code>
+     * <p>The key method.</p>
+     * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
+     * @return {@link io.github.nichetoolkit.example.TheEnumExample} <p>The key return object is <code>TheEnumExample</code> type.</p>
+     * @see java.lang.String
+     * @see com.fasterxml.jackson.annotation.JsonCreator
+     */
+    @JsonCreator
+    public static TheEnumExample parseKey(String key) {
+        TheEnumExample enumExample = RestKey.parseKey(TheEnumExample.class, key);
+        return Optional.ofNullable(enumExample).orElse(CASE1);
+    }
+
+}
+
+```
+
+# Class Example
+
+-  Code
+```java
+package io.github.nichetoolkit.example;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.github.nichetoolkit.rest.RestException;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
+
+import java.io.Serializable;
+
+@Deprecated
+@SuppressWarnings({"UnnecessaryParentheses", "unused"})
+public class TheClassExample<I, E extends TheClassExample<I, E>> implements Serializable {
+    @JsonIgnore
+    public static final String CLASS_FIELD_EXAMPLE = "CLASS_FIELD_EXAMPLE";
+
+    private String classField;
+
+    public TheClassExample() {
+    }
+
+    public TheClassExample(String classField) {
+        this.classField = classField;
+    }
+
+    @JsonValue
+    @NonNull
+    public String getClassField() {
+        return this.classField;
+    }
+
+    @JsonCreator
+    public void setClassField(@NonNull String classField) {
+        this.classField = classField;
+    }
+
+    @NonNull
+    public String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+        return new String[0];
+    }
+
+    @Deprecated
+    public void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
+    }
+
+    @NonNull
+    public int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
+}
+
+```
+
+-  doc
+```java
+package io.github.nichetoolkit.example;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.github.nichetoolkit.rest.RestException;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
+
+import java.io.Serializable;
+
+/**
+ * <code>TheClassExample</code>
+ * <p>The type the class example class.</p>
+ * @param <I> {@link java.lang.Object} <p>The parameter can be of any type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.TheClassExample} <p>The generic parameter is <code>TheClassExample</code> type.</p>
+ * @author Cyan (snow22314@outlook.com)
+ * @see java.io.Serializable
+ * @see java.lang.Deprecated
+ * @see java.lang.SuppressWarnings
+ * @since Jdk1.8
+ * @deprecated <p>The the class example class has be deprecated.</p>
+ */
+@Deprecated
+@SuppressWarnings({"UnnecessaryParentheses", "unused"})
+public class TheClassExample<I, E extends TheClassExample<I, E>> implements Serializable {
+    /**
+     * <code>CLASS_FIELD_EXAMPLE</code>
+     * {@link java.lang.String} <p>The constant <code>CLASS_FIELD_EXAMPLE</code> field.</p>
+     * @see java.lang.String
+     * @see com.fasterxml.jackson.annotation.JsonIgnore
+     */
+    @JsonIgnore
+    public static final String CLASS_FIELD_EXAMPLE = "CLASS_FIELD_EXAMPLE";
+
+    /**
+     * <code>classField</code>
+     * {@link java.lang.String} <p>The <code>classField</code> field.</p>
+     * @see java.lang.String
+     */
+    private String classField;
+
+    /**
+     * <code>TheClassExample</code>
+     * <p>Instantiates a new the class example.</p>
+     */
+    public TheClassExample() {
+    }
+
+    /**
+     * <code>TheClassExample</code>
+     * <p>Instantiates a new the class example.</p>
+     * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
+     * @see java.lang.String
+     */
+    public TheClassExample(String classField) {
+        this.classField = classField;
+    }
+
+    /**
+     * <code>getClassField</code>
+     * <p>The class field getter method.</p>
+     * @return {@link java.lang.String} <p>The class field return object is <code>String</code> type.</p>
+     * @see java.lang.String
+     * @see com.fasterxml.jackson.annotation.JsonValue
+     * @see org.springframework.lang.NonNull
+     */
+    @JsonValue
+    @NonNull
+    public String getClassField() {
+        return this.classField;
+    }
+
+    /**
+     * <code>setClassField</code>
+     * <p>The class field setter method.</p>
+     * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
+     * @see java.lang.String
+     * @see org.springframework.lang.NonNull
+     * @see com.fasterxml.jackson.annotation.JsonCreator
+     */
+    @JsonCreator
+    public void setClassField(@NonNull String classField) {
+        this.classField = classField;
+    }
+
+    /**
+     * <code>theMethodExample</code>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param param2 {@link java.lang.String} <p>The param 2 parameter is <code>String</code> type.</p>
+     * @param param3 {@link java.lang.String} <p>The param 3 parameter is <code>String</code> type.</p>
+     * @return {@link java.lang.String} <p>The method example return object is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see java.lang.String
+     * @see org.springframework.lang.NonNull
+     * @see io.github.nichetoolkit.rest.RestException
+     */
+    @NonNull
+    public String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+        return new String[0];
+    }
+
+    /**
+     * <code>theVoidMethodExample</code>
+     * <p>The void method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params {@link java.lang.String} <p>The params parameter is <code>String</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see java.lang.String
+     * @see org.springframework.lang.NonNull
+     * @see java.lang.Deprecated
+     * @see io.github.nichetoolkit.rest.RestException
+     * @deprecated <p>The the void method example method has be deprecated.</p>
+     */
+    @Deprecated
+    public void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
+    }
+
+    /**
+     * <code>theMethodExample</code>
+     * <p>The method example method.</p>
+     * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
+     * @param params int <p>The params parameter is <code>int</code> type.</p>
+     * @return int <p>The method example return object is <code>int</code> type.</p>
+     * @throws RestException {@link io.github.nichetoolkit.rest.RestException} <p>The rest exception is <code>RestException</code> type.</p>
+     * @see java.lang.Integer
+     * @see org.springframework.lang.Nullable
+     * @see org.springframework.lang.NonNull
+     * @see io.github.nichetoolkit.rest.RestException
+     */
+    @NonNull
+    public int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+        return new int[0];
+    }
+
+}
+
+```
