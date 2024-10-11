@@ -5,12 +5,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The type ${name?lower_case} interface.&lt;/p&gt;\n
-         * \n
-         &lt;#-- the interface deprecated annotation --&gt; 
-         &lt;#if element.isDeprecated()&gt;
+        &lt;#-- the interface deprecated annotation --&gt; 
+        &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} interface has be deprecated.&lt;/p&gt;\n
-        &lt;/#if&gt; 
-         * \n
+        &lt;/#if&gt;
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -23,11 +21,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the class see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign classSees = trim(element.qualifiedName)&gt; 
-         * \n
+        &lt;#assign classSees = trim(element.qualifiedName)&gt;
         &lt;#-- the interface generic parameter types --&gt;
         &lt;#if element.typeParameters?has_content&gt;
             &lt;#list element.typeParameters as parameter&gt;
@@ -52,8 +48,7 @@
                     {@link java.lang.Object} &lt;p&gt;The parameter can be of any type.&lt;/p&gt; \n
                 &lt;/#if&gt;
             &lt;/#list&gt;
-        &lt;/#if&gt;
-         * \n  
+        &lt;/#if&gt;  
         &lt;#-- the interface extends class types--&gt;
         &lt;#if element.extendsListTypes?has_content&gt;
             &lt;#list element.extendsListTypes as extendType&gt;
@@ -64,7 +59,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;    
         &lt;/#if&gt;
-         * \n
         &lt;#-- the interface annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;        
@@ -75,7 +69,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n 
          * @author Cyan (snow22314@outlook.com) \n
          * @since Jdk1.8 \n
          */
@@ -84,12 +77,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The type ${name?lower_case} enumeration.&lt;/p&gt;\n
-         * \n
          &lt;#-- the enumeration deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} enumeration has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -102,11 +93,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the class see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign classSees = trim(element.qualifiedName)&gt; 
-         * \n
+        &lt;#assign classSees = trim(element.qualifiedName)&gt;
         &lt;#-- the enumeration implements interface types--&gt;
         &lt;#if element.implementsListTypes?has_content&gt;
             &lt;#list element.implementsListTypes as implementType&gt;
@@ -117,7 +106,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the enumeration annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;        
@@ -128,7 +116,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n 
          * @author Cyan (snow22314@outlook.com) \n
          * @since Jdk1.8 \n
          */
@@ -137,12 +124,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The type ${name?lower_case} class.&lt;/p&gt;\n
-         * \n
          &lt;#-- the class deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} class has be deprecated.&lt;/p&gt;\n
-        &lt;/#if&gt; 
-         * \n
+        &lt;/#if&gt;
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -155,11 +140,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the class see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign classSees = trim(element.qualifiedName)&gt; 
-         * \n
+        &lt;#assign classSees = trim(element.qualifiedName)&gt;
         &lt;#-- the class generic parameter types --&gt;
         &lt;#if element.typeParameters?has_content&gt;
             &lt;#list element.typeParameters as parameter&gt;
@@ -185,7 +168,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n  
         &lt;#-- the class extends class types--&gt;
         &lt;#if element.extendsListTypes?has_content&gt;
             &lt;#list element.extendsListTypes as extendType&gt;
@@ -196,7 +178,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;    
         &lt;/#if&gt;
-         * \n
         &lt;#-- the class implements interface types--&gt;
         &lt;#if element.implementsListTypes?has_content&gt;
             &lt;#list element.implementsListTypes as implementType&gt;
@@ -207,7 +188,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the class annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;        
@@ -218,7 +198,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n 
          * @author Cyan (snow22314@outlook.com) \n
          * @since Jdk1.8 \n
          */
@@ -233,12 +212,10 @@
          &lt;#else&gt;
          * &lt;p&gt;The type ${name?lower_case}.&lt;/p&gt;\n
          &lt;/#if&gt;
-         * \n
          &lt;#-- the class deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} class has be deprecated.&lt;/p&gt;\n
-        &lt;/#if&gt; 
-         * \n
+        &lt;/#if&gt;
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -251,11 +228,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the class see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign classSees = trim(element.qualifiedName)&gt; 
-         * \n
+        &lt;#assign classSees = trim(element.qualifiedName)&gt;
         &lt;#-- the class generic parameter types --&gt;
         &lt;#if element.typeParameters?has_content&gt;
             &lt;#list element.typeParameters as parameter&gt;
@@ -281,7 +256,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n  
         &lt;#-- the class extends class types--&gt;
         &lt;#if element.extendsListTypes?has_content&gt;
             &lt;#list element.extendsListTypes as extendType&gt;
@@ -292,7 +266,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;    
         &lt;/#if&gt;
-         * \n
         &lt;#-- the class implements interface types--&gt;
         &lt;#if element.implementsListTypes?has_content&gt;
             &lt;#list element.implementsListTypes as implementType&gt;
@@ -303,7 +276,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the class annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;        
@@ -314,7 +286,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n 
          * @author Cyan (snow22314@outlook.com) \n
          * @since Jdk1.8 \n
          */
@@ -335,11 +306,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the field see global variable --&gt; 
         &lt;#-- the value of default is the field parent class qualified name --&gt; 
-        &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt;
         &lt;#assign fieldType = element.type&gt; 
         &lt;#assign canonicalName = trim(fieldType.getCanonicalText(false))&gt;
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
@@ -348,20 +317,17 @@
         &lt;#else&gt; 
             * &lt;p&gt;The constant &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
          &lt;#-- the field deprecated annotation --&gt; 
         &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n 
         &lt;#-- the field type --&gt; 
         &lt;#if !fieldSees?contains(canonicalName)&gt; 
             &lt;#assign fieldSees = fieldSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                 * @see ${canonicalName}  \n 
             &lt;/#if&gt;
-        &lt;/#if&gt;          
-         * \n
+        &lt;/#if&gt;
         &lt;#-- the field annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -388,11 +354,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the field see global variable --&gt; 
         &lt;#-- the value of default is the field parent class qualified name --&gt; 
-        &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt;
         &lt;#assign fieldType = element.type&gt; 
         &lt;#assign canonicalName = trim(fieldType.getCanonicalText(false))&gt;
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
@@ -409,20 +373,17 @@
                 * &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field.&lt;/p&gt;\n
             &lt;/#if&gt;
          &lt;/#if&gt;
-         * \n
          &lt;#-- the field deprecated annotation --&gt; 
         &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n 
         &lt;#-- the field type --&gt; 
         &lt;#if !fieldSees?contains(canonicalName)&gt; 
             &lt;#assign fieldSees = fieldSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                 * @see ${canonicalName}  \n 
             &lt;/#if&gt;
-        &lt;/#if&gt;          
-         * \n
+        &lt;/#if&gt;
         &lt;#-- the field annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -449,11 +410,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the field see global variable --&gt; 
         &lt;#-- the value of default is the field parent class qualified name --&gt; 
-        &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign fieldSees = trim(element.parent.qualifiedName)&gt;
         &lt;#assign fieldType = element.type&gt; 
         &lt;#assign canonicalName = trim(fieldType.getCanonicalText(false))&gt;
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
@@ -468,20 +427,17 @@
          &lt;#else&gt;
             * &lt;p&gt;The ${name?lower_case} field.&lt;/p&gt;\n
          &lt;/#if&gt;
-         * \n
          &lt;#-- the field deprecated annotation --&gt; 
         &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The &lt;code&gt;${element.name}&lt;/code&gt; field has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
         &lt;#-- the field type --&gt; 
         &lt;#if !fieldSees?contains(canonicalName)&gt; 
             &lt;#assign fieldSees = fieldSees + canonicalName&gt;
             &lt;#if canonicalName?contains(&quot;.&quot;)&gt;
                 * @see ${canonicalName}  \n 
             &lt;/#if&gt;
-        &lt;/#if&gt;          
-         * \n
+        &lt;/#if&gt;
         &lt;#-- the field annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -500,12 +456,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The ${partName?lower_case} getter method.&lt;/p&gt;\n
-         * \n
          &lt;#-- the method deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -518,11 +472,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the method see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt;
         &lt;#-- the method generic type parameters --&gt; 
         &lt;#if element.typeParameters?has_content&gt;
             &lt;#list element.typeParameters as parameter&gt;
@@ -548,7 +500,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method parameters --&gt; 
         &lt;#if element.parameterList.parameters?has_content&gt;
             &lt;#list element.parameterList.parameters as parameter&gt;
@@ -580,7 +531,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method return type --&gt;
         &lt;#if isNotVoid&gt;
             &lt;#assign returnType = element.returnType&gt; 
@@ -600,7 +550,6 @@
                 &lt;/#if&gt;
             &lt;/#if&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -611,7 +560,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-        * \n
         &lt;#-- the method throws exceptions --&gt;
         &lt;#if element.throwsList.referenceElements?has_content&gt; 
             &lt;#list element.throwsList.referenceElements as exception&gt;
@@ -636,12 +584,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The ${partName?lower_case} setter method.&lt;/p&gt;\n
-         * \n
          &lt;#-- the method deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -654,11 +600,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the method see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt;
         &lt;#-- the method generic type parameters --&gt; 
         &lt;#if element.typeParameters?has_content&gt;
             &lt;#list element.typeParameters as parameter&gt;
@@ -684,7 +628,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method parameters --&gt; 
         &lt;#if element.parameterList.parameters?has_content&gt;
             &lt;#list element.parameterList.parameters as parameter&gt;
@@ -716,7 +659,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method return type --&gt;
         &lt;#if isNotVoid&gt;
             &lt;#assign returnType = element.returnType&gt; 
@@ -736,7 +678,6 @@
                 &lt;/#if&gt;
             &lt;/#if&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -747,7 +688,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-        * \n
         &lt;#-- the method throws exceptions --&gt;
         &lt;#if element.throwsList.referenceElements?has_content&gt; 
             &lt;#list element.throwsList.referenceElements as exception&gt;
@@ -772,12 +712,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The entry point of application.&lt;/p&gt;\n
-         * \n
          &lt;#-- the method deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -790,17 +728,14 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the method see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt;
         &lt;#-- the method parameters --&gt;
         &lt;#if element.parameterList.parameters?has_content&gt;
             * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} &lt;p&gt;The input arguments.&lt;/p&gt;\n
             * @see java.lang.String  \n 
-        &lt;/#if&gt;   
-         * \n
+        &lt;/#if&gt;
         &lt;#-- the method annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -811,7 +746,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-        * \n
         &lt;#-- the method throws exceptions --&gt;
         &lt;#if element.throwsList.referenceElements?has_content&gt; 
             &lt;#list element.throwsList.referenceElements as exception&gt;
@@ -836,12 +770,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;The ${partName?lower_case} method.&lt;/p&gt;\n
-         * \n
          &lt;#-- the method deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -854,11 +786,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the method see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt;
         &lt;#-- the method generic type parameters --&gt; 
         &lt;#if element.typeParameters?has_content&gt;
             &lt;#list element.typeParameters as parameter&gt;
@@ -884,7 +814,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method parameters --&gt; 
         &lt;#if element.parameterList.parameters?has_content&gt;
             &lt;#list element.parameterList.parameters as parameter&gt;
@@ -916,7 +845,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method return type --&gt;
         &lt;#if isNotVoid&gt;
             &lt;#assign returnType = element.returnType&gt; 
@@ -936,7 +864,6 @@
                 &lt;/#if&gt;
             &lt;/#if&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -947,7 +874,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-        * \n
         &lt;#-- the method throws exceptions --&gt;
         &lt;#if element.throwsList.referenceElements?has_content&gt; 
             &lt;#list element.throwsList.referenceElements as exception&gt;
@@ -974,12 +900,10 @@
         /**\n
          * &lt;code&gt;${element.name}&lt;/code&gt;\n
          * &lt;p&gt;Instantiates a new ${name?lower_case}.&lt;/p&gt;\n
-         * \n
          &lt;#-- the method deprecated annotation --&gt; 
          &lt;#if element.isDeprecated()&gt;
             * @deprecated &lt;p&gt;The ${name?lower_case} method has be deprecated.&lt;/p&gt;\n
         &lt;/#if&gt;
-         * \n
         &lt;#-- the trim function is to trim the string of name --&gt; 
         &lt;#function trim name&gt;
             &lt;#if name?contains(&quot;&lt;&quot;)&gt;
@@ -992,11 +916,9 @@
                 &lt;#return name&gt;
             &lt;/#if&gt;
         &lt;/#function&gt;
-         * \n
         &lt;#-- the method see global variable --&gt; 
         &lt;#-- the value of default is the method parent class qualified name --&gt; 
-        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt; 
-         * \n
+        &lt;#assign methodSees = trim(element.parent.qualifiedName)&gt;
         &lt;#-- the method parameters --&gt; 
         &lt;#if element.parameterList.parameters?has_content&gt;
             &lt;#list element.parameterList.parameters as parameter&gt;
@@ -1028,7 +950,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-         * \n
         &lt;#-- the method annotation types --&gt;
         &lt;#if element.getAnnotations()?has_content&gt;
             &lt;#list element.getAnnotations() as annotation&gt;
@@ -1039,7 +960,6 @@
                 &lt;/#if&gt;
             &lt;/#list&gt;
         &lt;/#if&gt;
-        * \n
         &lt;#-- the method throws exceptions --&gt;
         &lt;#if element.throwsList.referenceElements?has_content&gt; 
             &lt;#list element.throwsList.referenceElements as exception&gt;
