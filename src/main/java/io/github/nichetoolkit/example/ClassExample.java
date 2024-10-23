@@ -10,54 +10,82 @@ import org.springframework.lang.Nullable;
 import java.io.Serializable;
 
 /**
- * <code>TheInterfaceExample</code>
- * <p>The type the interface example interface.</p>
+ * <code>ClassExample</code>
+ * <p>The class example class.</p>
  * @param <I> {@link java.lang.Object} <p>The parameter can be of any type.</p>
- * @param <E> {@link io.github.nichetoolkit.example.TheInterfaceExample} <p>The generic parameter is <code>TheInterfaceExample</code> type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.ClassExample} <p>The generic parameter is <code>ClassExample</code> type.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see java.io.Serializable
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>The the interface example interface has be deprecated.</p>
+ * @deprecated <p>The class example class has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> extends Serializable {
+public class ClassExample<I, E extends ClassExample<I, E>> implements Serializable {
     /**
-     * <code>INTERFACE_FIELD_EXAMPLE</code>
-     * {@link java.lang.String} <p>The constant <code>INTERFACE_FIELD_EXAMPLE</code> field.</p>
+     * <code>CLASS_FIELD_EXAMPLE</code>
+     * {@link java.lang.String} <p>The constant <code>CLASS_FIELD_EXAMPLE</code> field.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonIgnore
      */
     @JsonIgnore
-    String INTERFACE_FIELD_EXAMPLE = "INTERFACE_FIELD_EXAMPLE";
+    public static final String CLASS_FIELD_EXAMPLE = "CLASS_FIELD_EXAMPLE";
 
     /**
-     * <code>getInterfaceField</code>
-     * <p>The interface field getter method.</p>
-     * @return {@link java.lang.String} <p>The interface field return object is <code>String</code> type.</p>
+     * <code>classField</code>
+     * {@link java.lang.String} <p>The <code>classField</code> field.</p>
+     * @see java.lang.String
+     */
+    private String classField;
+
+    /**
+     * <code>ClassExample</code>
+     * <p>Instantiates a new class example.</p>
+     */
+    public ClassExample() {
+    }
+
+    /**
+     * <code>ClassExample</code>
+     * <p>Instantiates a new class example.</p>
+     * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
+     * @see java.lang.String
+     */
+    public ClassExample(String classField) {
+        this.classField = classField;
+    }
+
+    /**
+     * <code>getClassField</code>
+     * <p>The get class field getter method.</p>
+     * @return {@link java.lang.String} <p>The get class field return object is <code>String</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonValue
      * @see org.springframework.lang.NonNull
      */
     @JsonValue
     @NonNull
-    String getInterfaceField();
+    public String getClassField() {
+        return this.classField;
+    }
 
     /**
-     * <code>setInterfaceField</code>
-     * <p>The interface field setter method.</p>
-     * @param interfaceField {@link java.lang.String} <p>The interface field parameter is <code>String</code> type.</p>
+     * <code>setClassField</code>
+     * <p>The set class field setter method.</p>
+     * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
      * @see com.fasterxml.jackson.annotation.JsonCreator
      */
     @JsonCreator
-    void setInterfaceField(@NonNull String interfaceField);
+    public void setClassField(@NonNull String classField) {
+        this.classField = classField;
+    }
 
     /**
-     * <code>theMethodExample</code>
+     * <code>methodExample</code>
      * <p>The method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param param2 {@link java.lang.String} <p>The param 2 parameter is <code>String</code> type.</p>
@@ -71,12 +99,12 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
      * @see io.github.nichetoolkit.rest.RestException
      */
     @NonNull
-    default String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+    public String[] methodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
         return new String[0];
     }
 
     /**
-     * <code>theVoidMethodExample</code>
+     * <code>voidMethodExample</code>
      * <p>The void method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param params {@link java.lang.String} <p>The params parameter is <code>String</code> type.</p>
@@ -87,13 +115,14 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
      * @see org.springframework.lang.NonNull
      * @see java.lang.Deprecated
      * @see io.github.nichetoolkit.rest.RestException
-     * @deprecated <p>The the void method example method has be deprecated.</p>
+     * @deprecated <p>The void method example method has be deprecated.</p>
      */
     @Deprecated
-    default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
+    public void voidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
+    }
 
     /**
-     * <code>theMethodExample</code>
+     * <code>methodExample</code>
      * <p>The method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param params int <p>The params parameter is <code>int</code> type.</p>
@@ -105,7 +134,7 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
      * @see io.github.nichetoolkit.rest.RestException
      */
     @NonNull
-    default int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+    public int[] methodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
         return new int[0];
     }
 

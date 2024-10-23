@@ -8,26 +8,26 @@ import io.github.nichetoolkit.rest.RestKey;
 import java.util.Optional;
 
 /**
- * <code>TheEnumExample</code>
- * <p>The type the enum example enumeration.</p>
+ * <code>EnumExample</code>
+ * <p>The enum example enumeration.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see io.github.nichetoolkit.rest.RestKey
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>The the enum example enumeration has be deprecated.</p>
+ * @deprecated <p>The enum example enumeration has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public enum TheEnumExample implements RestKey<String> {
+public enum EnumExample implements RestKey<String> {
     /**
      * <code>CASE1</code>
-     * <p>The case 1 the enum example field.</p>
+     * <p>The case 1 enum example field.</p>
      */
     CASE1("case1"),
     /**
      * <code>CASE2</code>
-     * <p>The case 2 the enum example field.</p>
+     * <p>The case 2 enum example field.</p>
      */
     CASE2("case2"),
     ;
@@ -49,12 +49,12 @@ public enum TheEnumExample implements RestKey<String> {
     private final String key;
 
     /**
-     * <code>TheEnumExample</code>
-     * <p>Instantiates a new the enum example.</p>
+     * <code>EnumExample</code>
+     * <p>Instantiates a new enum example.</p>
      * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
      * @see java.lang.String
      */
-    TheEnumExample(String key) {
+    EnumExample(String key) {
         this.key = key;
     }
 
@@ -66,15 +66,15 @@ public enum TheEnumExample implements RestKey<String> {
 
     /**
      * <code>parseKey</code>
-     * <p>The key method.</p>
+     * <p>The parse key method.</p>
      * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
-     * @return {@link io.github.nichetoolkit.example.TheEnumExample} <p>The key return object is <code>TheEnumExample</code> type.</p>
+     * @return {@link io.github.nichetoolkit.example.EnumExample} <p>The parse key return object is <code>EnumExample</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonCreator
      */
     @JsonCreator
-    public static TheEnumExample parseKey(String key) {
-        TheEnumExample enumExample = RestKey.parseKey(TheEnumExample.class, key);
+    public static EnumExample parseKey(String key) {
+        EnumExample enumExample = RestKey.parseKey(EnumExample.class, key);
         return Optional.ofNullable(enumExample).orElse(CASE1);
     }
 

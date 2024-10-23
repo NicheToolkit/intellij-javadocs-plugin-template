@@ -38,6 +38,7 @@ Intellij-Community Psi-Api Source:  https://github.com/JetBrains/intellij-commun
 ### Interface Example
 
 -  Code
+
 ```java
 package io.github.nichetoolkit.example;
 
@@ -52,7 +53,7 @@ import java.io.Serializable;
 
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> extends Serializable {
+public interface InterfaceExample<I,E extends InterfaceExample<I,E>> extends Serializable {
     @JsonIgnore
     String INTERFACE_FIELD_EXAMPLE = "INTERFACE_FIELD_EXAMPLE";
 
@@ -64,24 +65,24 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
     void setInterfaceField(@NonNull String interfaceField);
 
     @NonNull
-    default String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+    default String[] methodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
         return new String[0];
     }
 
     @Deprecated
-    default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
+    default void voidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
 
     @NonNull
-    default int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+    default int[] methodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
         return new int[0];
     }
 
 }
-
 ```
 
 
 -  Doc
+
 ```java
 package io.github.nichetoolkit.example;
 
@@ -95,20 +96,20 @@ import org.springframework.lang.Nullable;
 import java.io.Serializable;
 
 /**
- * <code>TheInterfaceExample</code>
- * <p>The type the interface example interface.</p>
+ * <code>InterfaceExample</code>
+ * <p>The interface example interface.</p>
  * @param <I> {@link java.lang.Object} <p>The parameter can be of any type.</p>
- * @param <E> {@link io.github.nichetoolkit.example.TheInterfaceExample} <p>The generic parameter is <code>TheInterfaceExample</code> type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.InterfaceExample} <p>The generic parameter is <code>InterfaceExample</code> type.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see java.io.Serializable
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>The the interface example interface has be deprecated.</p>
+ * @deprecated <p>The interface example interface has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> extends Serializable {
+public interface InterfaceExample<I,E extends InterfaceExample<I,E>> extends Serializable {
     /**
      * <code>INTERFACE_FIELD_EXAMPLE</code>
      * {@link java.lang.String} <p>The constant <code>INTERFACE_FIELD_EXAMPLE</code> field.</p>
@@ -120,8 +121,8 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
 
     /**
      * <code>getInterfaceField</code>
-     * <p>The interface field getter method.</p>
-     * @return {@link java.lang.String} <p>The interface field return object is <code>String</code> type.</p>
+     * <p>The get interface field getter method.</p>
+     * @return {@link java.lang.String} <p>The get interface field return object is <code>String</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonValue
      * @see org.springframework.lang.NonNull
@@ -132,7 +133,7 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
 
     /**
      * <code>setInterfaceField</code>
-     * <p>The interface field setter method.</p>
+     * <p>The set interface field setter method.</p>
      * @param interfaceField {@link java.lang.String} <p>The interface field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
@@ -142,7 +143,7 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
     void setInterfaceField(@NonNull String interfaceField);
 
     /**
-     * <code>theMethodExample</code>
+     * <code>methodExample</code>
      * <p>The method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param param2 {@link java.lang.String} <p>The param 2 parameter is <code>String</code> type.</p>
@@ -156,12 +157,12 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
      * @see io.github.nichetoolkit.rest.RestException
      */
     @NonNull
-    default String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+    default String[] methodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
         return new String[0];
     }
 
     /**
-     * <code>theVoidMethodExample</code>
+     * <code>voidMethodExample</code>
      * <p>The void method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param params {@link java.lang.String} <p>The params parameter is <code>String</code> type.</p>
@@ -172,13 +173,13 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
      * @see org.springframework.lang.NonNull
      * @see java.lang.Deprecated
      * @see io.github.nichetoolkit.rest.RestException
-     * @deprecated <p>The the void method example method has be deprecated.</p>
+     * @deprecated <p>The void method example method has be deprecated.</p>
      */
     @Deprecated
-    default void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
+    default void voidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {}
 
     /**
-     * <code>theMethodExample</code>
+     * <code>methodExample</code>
      * <p>The method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param params int <p>The params parameter is <code>int</code> type.</p>
@@ -190,17 +191,17 @@ public interface TheInterfaceExample<I,E extends TheInterfaceExample<I,E>> exten
      * @see io.github.nichetoolkit.rest.RestException
      */
     @NonNull
-    default int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+    default int[] methodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
         return new int[0];
     }
 
 }
-
 ```
 
 ### Enum Example
 
 -  Code
+
 ```java
 package io.github.nichetoolkit.example;
 
@@ -213,17 +214,17 @@ import java.util.Optional;
 
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public enum TheEnumExample implements RestKey<String> {
+public enum EnumExample implements RestKey<String> {
     CASE1("case1"),
     CASE2("case2"),
     ;
 
     @JsonIgnore
     private static final String ENUM_FIELD_EXAMPLE = "ENUM_FIELD_EXAMPLE";
-    
+
     private final String key;
 
-    TheEnumExample(String key) {
+    EnumExample(String key) {
         this.key = key;
     }
 
@@ -234,16 +235,16 @@ public enum TheEnumExample implements RestKey<String> {
     }
 
     @JsonCreator
-    public static TheEnumExample parseKey(String key) {
-        TheEnumExample enumExample = RestKey.parseKey(TheEnumExample.class, key);
+    public static EnumExample parseKey(String key) {
+        EnumExample enumExample = RestKey.parseKey(EnumExample.class, key);
         return Optional.ofNullable(enumExample).orElse(CASE1);
     }
 
 }
-
 ```
 
 -  doc
+
 ```java
 package io.github.nichetoolkit.example;
 
@@ -255,26 +256,26 @@ import io.github.nichetoolkit.rest.RestKey;
 import java.util.Optional;
 
 /**
- * <code>TheEnumExample</code>
- * <p>The type the enum example enumeration.</p>
+ * <code>EnumExample</code>
+ * <p>The enum example enumeration.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see io.github.nichetoolkit.rest.RestKey
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>The the enum example enumeration has be deprecated.</p>
+ * @deprecated <p>The enum example enumeration has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public enum TheEnumExample implements RestKey<String> {
+public enum EnumExample implements RestKey<String> {
     /**
      * <code>CASE1</code>
-     * <p>The case 1 the enum example field.</p>
+     * <p>The case 1 enum example field.</p>
      */
     CASE1("case1"),
     /**
      * <code>CASE2</code>
-     * <p>The case 2 the enum example field.</p>
+     * <p>The case 2 enum example field.</p>
      */
     CASE2("case2"),
     ;
@@ -296,12 +297,12 @@ public enum TheEnumExample implements RestKey<String> {
     private final String key;
 
     /**
-     * <code>TheEnumExample</code>
-     * <p>Instantiates a new the enum example.</p>
+     * <code>EnumExample</code>
+     * <p>Instantiates a new enum example.</p>
      * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
      * @see java.lang.String
      */
-    TheEnumExample(String key) {
+    EnumExample(String key) {
         this.key = key;
     }
 
@@ -313,25 +314,25 @@ public enum TheEnumExample implements RestKey<String> {
 
     /**
      * <code>parseKey</code>
-     * <p>The key method.</p>
+     * <p>The parse key method.</p>
      * @param key {@link java.lang.String} <p>The key parameter is <code>String</code> type.</p>
-     * @return {@link io.github.nichetoolkit.example.TheEnumExample} <p>The key return object is <code>TheEnumExample</code> type.</p>
+     * @return {@link io.github.nichetoolkit.example.EnumExample} <p>The parse key return object is <code>EnumExample</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonCreator
      */
     @JsonCreator
-    public static TheEnumExample parseKey(String key) {
-        TheEnumExample enumExample = RestKey.parseKey(TheEnumExample.class, key);
+    public static EnumExample parseKey(String key) {
+        EnumExample enumExample = RestKey.parseKey(EnumExample.class, key);
         return Optional.ofNullable(enumExample).orElse(CASE1);
     }
 
 }
-
 ```
 
 ### Class Example
 
 -  Code
+
 ```java
 package io.github.nichetoolkit.example;
 
@@ -346,16 +347,16 @@ import java.io.Serializable;
 
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public class TheClassExample<I, E extends TheClassExample<I, E>> implements Serializable {
+public class ClassExample<I, E extends ClassExample<I, E>> implements Serializable {
     @JsonIgnore
     public static final String CLASS_FIELD_EXAMPLE = "CLASS_FIELD_EXAMPLE";
 
     private String classField;
 
-    public TheClassExample() {
+    public ClassExample() {
     }
 
-    public TheClassExample(String classField) {
+    public ClassExample(String classField) {
         this.classField = classField;
     }
 
@@ -371,24 +372,24 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     }
 
     @NonNull
-    public String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+    public String[] methodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
         return new String[0];
     }
 
     @Deprecated
-    public void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
+    public void voidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
     }
 
     @NonNull
-    public int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+    public int[] methodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
         return new int[0];
     }
 
 }
-
 ```
 
 -  doc
+
 ```java
 package io.github.nichetoolkit.example;
 
@@ -402,20 +403,20 @@ import org.springframework.lang.Nullable;
 import java.io.Serializable;
 
 /**
- * <code>TheClassExample</code>
- * <p>The type the class example class.</p>
+ * <code>ClassExample</code>
+ * <p>The class example class.</p>
  * @param <I> {@link java.lang.Object} <p>The parameter can be of any type.</p>
- * @param <E> {@link io.github.nichetoolkit.example.TheClassExample} <p>The generic parameter is <code>TheClassExample</code> type.</p>
+ * @param <E> {@link io.github.nichetoolkit.example.ClassExample} <p>The generic parameter is <code>ClassExample</code> type.</p>
  * @author Cyan (snow22314@outlook.com)
  * @see java.io.Serializable
  * @see java.lang.Deprecated
  * @see java.lang.SuppressWarnings
  * @since Jdk1.8
- * @deprecated <p>The the class example class has be deprecated.</p>
+ * @deprecated <p>The class example class has be deprecated.</p>
  */
 @Deprecated
 @SuppressWarnings({"UnnecessaryParentheses", "unused"})
-public class TheClassExample<I, E extends TheClassExample<I, E>> implements Serializable {
+public class ClassExample<I, E extends ClassExample<I, E>> implements Serializable {
     /**
      * <code>CLASS_FIELD_EXAMPLE</code>
      * {@link java.lang.String} <p>The constant <code>CLASS_FIELD_EXAMPLE</code> field.</p>
@@ -433,26 +434,26 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     private String classField;
 
     /**
-     * <code>TheClassExample</code>
-     * <p>Instantiates a new the class example.</p>
+     * <code>ClassExample</code>
+     * <p>Instantiates a new class example.</p>
      */
-    public TheClassExample() {
+    public ClassExample() {
     }
 
     /**
-     * <code>TheClassExample</code>
-     * <p>Instantiates a new the class example.</p>
+     * <code>ClassExample</code>
+     * <p>Instantiates a new class example.</p>
      * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      */
-    public TheClassExample(String classField) {
+    public ClassExample(String classField) {
         this.classField = classField;
     }
 
     /**
      * <code>getClassField</code>
-     * <p>The class field getter method.</p>
-     * @return {@link java.lang.String} <p>The class field return object is <code>String</code> type.</p>
+     * <p>The get class field getter method.</p>
+     * @return {@link java.lang.String} <p>The get class field return object is <code>String</code> type.</p>
      * @see java.lang.String
      * @see com.fasterxml.jackson.annotation.JsonValue
      * @see org.springframework.lang.NonNull
@@ -465,7 +466,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 
     /**
      * <code>setClassField</code>
-     * <p>The class field setter method.</p>
+     * <p>The set class field setter method.</p>
      * @param classField {@link java.lang.String} <p>The class field parameter is <code>String</code> type.</p>
      * @see java.lang.String
      * @see org.springframework.lang.NonNull
@@ -477,7 +478,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     }
 
     /**
-     * <code>theMethodExample</code>
+     * <code>methodExample</code>
      * <p>The method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param param2 {@link java.lang.String} <p>The param 2 parameter is <code>String</code> type.</p>
@@ -491,12 +492,12 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
      * @see io.github.nichetoolkit.rest.RestException
      */
     @NonNull
-    public String[] theMethodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
+    public String[] methodExample(@Nullable Integer param1, @NonNull String param2, @NonNull String param3) throws RestException {
         return new String[0];
     }
 
     /**
-     * <code>theVoidMethodExample</code>
+     * <code>voidMethodExample</code>
      * <p>The void method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param params {@link java.lang.String} <p>The params parameter is <code>String</code> type.</p>
@@ -507,14 +508,14 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
      * @see org.springframework.lang.NonNull
      * @see java.lang.Deprecated
      * @see io.github.nichetoolkit.rest.RestException
-     * @deprecated <p>The the void method example method has be deprecated.</p>
+     * @deprecated <p>The void method example method has be deprecated.</p>
      */
     @Deprecated
-    public void theVoidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
+    public void voidMethodExample(@Nullable Integer param1, @NonNull String... params) throws RestException {
     }
 
     /**
-     * <code>theMethodExample</code>
+     * <code>methodExample</code>
      * <p>The method example method.</p>
      * @param param1 {@link java.lang.Integer} <p>The param 1 parameter is <code>Integer</code> type.</p>
      * @param params int <p>The params parameter is <code>int</code> type.</p>
@@ -526,12 +527,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
      * @see io.github.nichetoolkit.rest.RestException
      */
     @NonNull
-    public int[] theMethodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
+    public int[] methodExample(@Nullable Integer param1, @NonNull int... params) throws RestException {
         return new int[0];
     }
 
 }
-
 ```
 
 ## Javadoc Plugin Settings Templates
@@ -549,13 +549,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>The type ${name?lower_case} interface.</p>\n
- * \n
- <#-- the interface deprecated annotation --> 
- <#if element.isDeprecated()>
+ * <p>The ${name?lower_case} interface.</p>\n
+<#-- the interface deprecated annotation --> 
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} interface has be deprecated.</p>\n
-</#if> 
- * \n
+</#if>
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -568,11 +566,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the class see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign classSees = trim(element.qualifiedName)> 
- * \n
+<#assign classSees = trim(element.qualifiedName)>
 <#-- the interface generic parameter types -->
 <#if element.typeParameters?has_content>
     <#list element.typeParameters as parameter>
@@ -598,7 +594,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n  
 <#-- the interface extends class types-->
 <#if element.extendsListTypes?has_content>
     <#list element.extendsListTypes as extendType>
@@ -609,7 +604,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>    
 </#if>
- * \n
 <#-- the interface annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>        
@@ -620,7 +614,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n 
  * @author Cyan (snow22314@outlook.com) \n
  * @since Jdk1.8 \n
  */
@@ -637,13 +630,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>The type ${name?lower_case} enumeration.</p>\n
- * \n
- <#-- the enumeration deprecated annotation --> 
- <#if element.isDeprecated()>
+ * <p>The ${name?lower_case} enumeration.</p>\n
+<#-- the enumeration deprecated annotation --> 
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} enumeration has be deprecated.</p>\n
 </#if>
- * \n
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -656,11 +647,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the class see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign classSees = trim(element.qualifiedName)> 
- * \n
+<#assign classSees = trim(element.qualifiedName)>
 <#-- the enumeration implements interface types-->
 <#if element.implementsListTypes?has_content>
     <#list element.implementsListTypes as implementType>
@@ -671,7 +660,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the enumeration annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>        
@@ -682,7 +670,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n 
  * @author Cyan (snow22314@outlook.com) \n
  * @since Jdk1.8 \n
  */
@@ -699,13 +686,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>The type ${name?lower_case} class.</p>\n
- * \n
- <#-- the class deprecated annotation --> 
- <#if element.isDeprecated()>
+ * <p>The ${name?lower_case} class.</p>\n
+<#-- the class deprecated annotation -->
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} class has be deprecated.</p>\n
-</#if> 
- * \n
+</#if>
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -718,11 +703,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the class see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign classSees = trim(element.qualifiedName)> 
- * \n
+<#assign classSees = trim(element.qualifiedName)>
 <#-- the class generic parameter types -->
 <#if element.typeParameters?has_content>
     <#list element.typeParameters as parameter>
@@ -748,7 +731,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n  
 <#-- the class extends class types-->
 <#if element.extendsListTypes?has_content>
     <#list element.extendsListTypes as extendType>
@@ -759,7 +741,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>    
 </#if>
- * \n
 <#-- the class implements interface types-->
 <#if element.implementsListTypes?has_content>
     <#list element.implementsListTypes as implementType>
@@ -770,7 +751,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the class annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>        
@@ -781,7 +761,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n 
  * @author Cyan (snow22314@outlook.com) \n
  * @since Jdk1.8 \n
  */
@@ -798,19 +777,17 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- <#if element.isInterface()>
-    * <p>The type ${name?lower_case} interface.</p>\n
- <#elseif element.isEnum()>
-    * <p>The type ${name?lower_case} enumeration.</p>\n
- <#else>
- * <p>The type ${name?lower_case}.</p>\n
- </#if>
- * \n
- <#-- the class deprecated annotation --> 
- <#if element.isDeprecated()>
+<#if element.isInterface()>
+    * <p>The ${name?lower_case} interface.</p>\n
+<#elseif element.isEnum()>
+    * <p>The ${name?lower_case} enumeration.</p>\n
+<#else>
+ * <p>The ${name?lower_case}.</p>\n
+</#if>
+<#-- the class deprecated annotation --> 
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} class has be deprecated.</p>\n
-</#if> 
- * \n
+</#if>
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -823,11 +800,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the class see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign classSees = trim(element.qualifiedName)> 
- * \n
+<#assign classSees = trim(element.qualifiedName)>
 <#-- the class generic parameter types -->
 <#if element.typeParameters?has_content>
     <#list element.typeParameters as parameter>
@@ -853,7 +828,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n  
 <#-- the class extends class types-->
 <#if element.extendsListTypes?has_content>
     <#list element.extendsListTypes as extendType>
@@ -864,7 +838,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>    
 </#if>
- * \n
 <#-- the class implements interface types-->
 <#if element.implementsListTypes?has_content>
     <#list element.implementsListTypes as implementType>
@@ -875,7 +848,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the class annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>        
@@ -886,7 +858,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n 
  * @author Cyan (snow22314@outlook.com) \n
  * @since Jdk1.8 \n
  */
@@ -903,12 +874,10 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 /**\n
  * <code>${element.name}</code>\n
  * <p>Instantiates a new ${name?lower_case}.</p>\n
- * \n
- <#-- the method deprecated annotation --> 
- <#if element.isDeprecated()>
+<#-- the method deprecated annotation --> 
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
- * \n
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -921,11 +890,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the method see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign methodSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign methodSees = trim(element.parent.qualifiedName)>
 <#-- the method parameters --> 
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
@@ -957,7 +924,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the method annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
@@ -968,7 +934,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
-* \n
 <#-- the method throws exceptions -->
 <#if element.throwsList.referenceElements?has_content> 
     <#list element.throwsList.referenceElements as exception>
@@ -1003,13 +968,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>The ${partName?lower_case} getter method.</p>\n
- * \n
- <#-- the method deprecated annotation --> 
- <#if element.isDeprecated()>
+ * <p>The ${name?lower_case} getter method.</p>\n
+<#-- the method deprecated annotation -->
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
- * \n
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -1022,11 +985,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the method see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign methodSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign methodSees = trim(element.parent.qualifiedName)>
 <#-- the method generic type parameters --> 
 <#if element.typeParameters?has_content>
     <#list element.typeParameters as parameter>
@@ -1052,7 +1013,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the method parameters --> 
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
@@ -1084,7 +1044,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the method return type -->
 <#if isNotVoid>
     <#assign returnType = element.returnType> 
@@ -1096,7 +1055,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#else> 
         ${canonicalName}
     </#if>
-     <p>The ${partName?lower_case} return object is <code>${presentableName}</code> type.</p> \n
+     <p>The ${name?lower_case} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1104,7 +1063,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#if>
 </#if>
- * \n
 <#-- the method annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
@@ -1115,7 +1073,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
-* \n
 <#-- the method throws exceptions -->
 <#if element.throwsList.referenceElements?has_content> 
     <#list element.throwsList.referenceElements as exception>
@@ -1148,13 +1105,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>The ${partName?lower_case} setter method.</p>\n
- * \n
- <#-- the method deprecated annotation --> 
- <#if element.isDeprecated()>
+ * <p>The ${name?lower_case} setter method.</p>\n
+<#-- the method deprecated annotation --> 
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
- * \n
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -1167,11 +1122,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the method see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign methodSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign methodSees = trim(element.parent.qualifiedName)>
 <#-- the method generic type parameters --> 
 <#if element.typeParameters?has_content>
     <#list element.typeParameters as parameter>
@@ -1197,7 +1150,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the method parameters --> 
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
@@ -1229,7 +1181,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the method return type -->
 <#if isNotVoid>
     <#assign returnType = element.returnType> 
@@ -1241,7 +1192,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#else> 
         ${canonicalName}
     </#if>
-     <p>The ${partName?lower_case} return object is <code>${presentableName}</code> type.</p> \n
+     <p>The ${name?lower_case} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1249,7 +1200,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#if>
 </#if>
- * \n
 <#-- the method annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
@@ -1260,7 +1210,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
-* \n
 <#-- the method throws exceptions -->
 <#if element.throwsList.referenceElements?has_content> 
     <#list element.throwsList.referenceElements as exception>
@@ -1294,12 +1243,10 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 /**\n
  * <code>${element.name}</code>\n
  * <p>The entry point of application.</p>\n
- * \n
- <#-- the method deprecated annotation --> 
- <#if element.isDeprecated()>
+<#-- the method deprecated annotation --> 
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
- * \n
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -1312,17 +1259,14 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the method see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign methodSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign methodSees = trim(element.parent.qualifiedName)>
 <#-- the method parameters -->
 <#if element.parameterList.parameters?has_content>
     * @param ${element.parameterList.parameters[0].name} {@link java.lang.String} <p>The input arguments.</p>\n
     * @see java.lang.String  \n 
-</#if>   
- * \n
+</#if>
 <#-- the method annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
@@ -1333,7 +1277,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
-* \n
 <#-- the method throws exceptions -->
 <#if element.throwsList.referenceElements?has_content> 
     <#list element.throwsList.referenceElements as exception>
@@ -1367,13 +1310,11 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 ```java
 /**\n
  * <code>${element.name}</code>\n
- * <p>The ${partName?lower_case} method.</p>\n
- * \n
- <#-- the method deprecated annotation --> 
- <#if element.isDeprecated()>
+ * <p>The ${name?lower_case} method.</p>\n
+<#-- the method deprecated annotation --> 
+<#if element.isDeprecated()>
     * @deprecated <p>The ${name?lower_case} method has be deprecated.</p>\n
 </#if>
- * \n
 <#-- the trim function is to trim the string of name --> 
 <#function trim name>
     <#if name?contains("<")>
@@ -1386,11 +1327,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the method see global variable --> 
 <#-- the value of default is the method parent class qualified name --> 
-<#assign methodSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign methodSees = trim(element.parent.qualifiedName)>
 <#-- the method generic type parameters --> 
 <#if element.typeParameters?has_content>
     <#list element.typeParameters as parameter>
@@ -1416,7 +1355,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the method parameters --> 
 <#if element.parameterList.parameters?has_content>
     <#list element.parameterList.parameters as parameter>
@@ -1448,7 +1386,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
- * \n
 <#-- the method return type -->
 <#if isNotVoid>
     <#assign returnType = element.returnType> 
@@ -1460,7 +1397,7 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
     <#else> 
         ${canonicalName}
     </#if>
-     <p>The ${partName?lower_case} return object is <code>${presentableName}</code> type.</p> \n
+     <p>The ${name?lower_case} return object is <code>${presentableName}</code> type.</p> \n
     <#if !methodSees?contains(canonicalName)> 
         <#assign methodSees = methodSees + canonicalName>  
         <#if canonicalName?contains(".")>
@@ -1468,7 +1405,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#if>
 </#if>
- * \n
 <#-- the method annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
@@ -1479,7 +1415,6 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         </#if>
     </#list>
 </#if>
-* \n
 <#-- the method throws exceptions -->
 <#if element.throwsList.referenceElements?has_content> 
     <#list element.throwsList.referenceElements as exception>
@@ -1525,11 +1460,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the field see global variable --> 
 <#-- the value of default is the field parent class qualified name --> 
-<#assign fieldSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign fieldSees = trim(element.parent.qualifiedName)>
 <#assign fieldType = element.type> 
 <#assign canonicalName = trim(fieldType.getCanonicalText(false))>
  * <code>${element.name}</code>\n
@@ -1538,20 +1471,17 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
 <#else> 
     * <p>The constant <code>${element.name}</code> field.</p>\n
 </#if>
- * \n
- <#-- the field deprecated annotation --> 
+<#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
     * @deprecated <p>The <code>${element.name}</code> field has be deprecated.</p>\n
 </#if>
- * \n 
 <#-- the field type --> 
 <#if !fieldSees?contains(canonicalName)> 
     <#assign fieldSees = fieldSees + canonicalName>
     <#if canonicalName?contains(".")>
         * @see ${canonicalName}  \n 
     </#if>
-</#if>          
- * \n
+</#if>
 <#-- the field annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
@@ -1588,11 +1518,9 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the field see global variable --> 
 <#-- the value of default is the field parent class qualified name --> 
-<#assign fieldSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign fieldSees = trim(element.parent.qualifiedName)>
 <#assign fieldType = element.type> 
 <#assign canonicalName = trim(fieldType.getCanonicalText(false))>
  * <code>${element.name}</code>\n
@@ -1609,20 +1537,17 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         * <p>The <code>${element.name}</code> field.</p>\n
     </#if>
  </#if>
- * \n
- <#-- the field deprecated annotation --> 
+<#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
     * @deprecated <p>The <code>${element.name}</code> field has be deprecated.</p>\n
 </#if>
- * \n 
 <#-- the field type --> 
 <#if !fieldSees?contains(canonicalName)> 
     <#assign fieldSees = fieldSees + canonicalName>
     <#if canonicalName?contains(".")>
         * @see ${canonicalName}  \n 
     </#if>
-</#if>          
- * \n
+</#if>
 <#-- the field annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
@@ -1659,39 +1584,34 @@ public class TheClassExample<I, E extends TheClassExample<I, E>> implements Seri
         <#return name>
     </#if>
 </#function>
- * \n
 <#-- the field see global variable --> 
 <#-- the value of default is the field parent class qualified name --> 
-<#assign fieldSees = trim(element.parent.qualifiedName)> 
- * \n
+<#assign fieldSees = trim(element.parent.qualifiedName)>
 <#assign fieldType = element.type> 
 <#assign canonicalName = trim(fieldType.getCanonicalText(false))>
  * <code>${element.name}</code>\n
- <#if element.parent.isInterface()>
+<#if element.parent.isInterface()>
     <#if canonicalName?contains(".")>
         * {@link ${canonicalName}} <p>The constant <code>${element.name}</code> field.</p>\n
     <#else> 
         * <p>The constant <code>${element.name}</code> field.</p>\n
     </#if> 
- <#elseif element.parent.isEnum()>
+<#elseif element.parent.isEnum()>
     * <p>The ${name?lower_case} ${typeName?lower_case} field.</p>\n
- <#else>
+<#else>
     * <p>The ${name?lower_case} field.</p>\n 
- </#if>
- * \n
- <#-- the field deprecated annotation --> 
+</#if>
+<#-- the field deprecated annotation --> 
 <#if element.isDeprecated()>
     * @deprecated <p>The <code>${element.name}</code> field has be deprecated.</p>\n
 </#if>
- * \n
 <#-- the field type --> 
 <#if !fieldSees?contains(canonicalName)> 
     <#assign fieldSees = fieldSees + canonicalName>
     <#if canonicalName?contains(".")>
         * @see ${canonicalName}  \n 
     </#if>
-</#if>          
- * \n
+</#if>
 <#-- the field annotation types -->
 <#if element.getAnnotations()?has_content>
     <#list element.getAnnotations() as annotation>
